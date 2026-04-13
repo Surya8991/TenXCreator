@@ -1,8 +1,16 @@
 # TenX Creator
 
+<!-- Replace with your own screenshot: take a screenshot of the chat page and save as docs/banner.png -->
+<!-- ![TenX Creator](docs/banner.png) -->
+
 AI-powered business advisor built for content creators. Get real-time, actionable advice on content strategy, brand deals, taxes, finance, and analytics — with actual numbers, not generic tips.
 
 **India-first** with GST, TDS, and INR rate cards built-in. Supports 20+ countries.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Features
 
