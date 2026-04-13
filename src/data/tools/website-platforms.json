@@ -1,0 +1,225 @@
+{
+  "lastUpdated": "2026-04-01",
+  "cms": {
+    "wordpress": {
+      "name": "WordPress",
+      "type": "CMS",
+      "cost": "Free (self-hosted) or $4-45/mo (WordPress.com)",
+      "bestFor": "Blogs, course sites, membership sites, WooCommerce stores",
+      "difficulty": "Beginner-friendly with themes, moderate for customization",
+      "creatorUseCase": "Blog for SEO traffic, course hosting with LearnDash/Tutor LMS, membership with MemberPress, affiliate sites",
+      "hosting": ["Bluehost ($2.95/mo)", "SiteGround ($3.99/mo)", "Hostinger ($1.99/mo)", "Cloudways ($14/mo)", "Kinsta ($35/mo premium)"],
+      "essentialPlugins": ["Yoast SEO", "WooCommerce", "Elementor/Divi", "LearnDash", "MemberPress", "WPForms", "MonsterInsights", "UpdraftPlus"],
+      "pros": ["Massive plugin ecosystem (60K+)", "SEO-friendly out of box", "Full ownership of content", "Huge community support"],
+      "cons": ["Needs maintenance/updates", "Can be slow without optimization", "Security responsibility on you", "Plugin conflicts"],
+      "marketShare": "43% of all websites globally"
+    },
+    "shopify": {
+      "name": "Shopify",
+      "type": "E-commerce Platform",
+      "cost": "$29-299/mo",
+      "bestFor": "Merch stores, digital product sales, dropshipping",
+      "difficulty": "Easy",
+      "creatorUseCase": "Merchandise store, print-on-demand with Printful/Printify, digital downloads, branded products",
+      "pros": ["Best-in-class checkout", "Built-in payments", "App ecosystem", "No tech maintenance"],
+      "cons": ["Monthly cost", "Transaction fees (unless Shopify Payments)", "Limited blogging", "Template lock-in"]
+    },
+    "webflow": {
+      "name": "Webflow",
+      "type": "Visual Web Builder",
+      "cost": "Free (limited) or $14-39/mo",
+      "bestFor": "Portfolio sites, landing pages, brand sites with custom design",
+      "difficulty": "Moderate (visual but powerful)",
+      "creatorUseCase": "Professional portfolio, media kit hosting, brand website, course landing pages",
+      "pros": ["Design freedom without code", "Built-in CMS", "Clean code output", "Hosting included"],
+      "cons": ["Learning curve", "Expensive at scale", "Limited e-commerce", "No native course/membership tools"]
+    },
+    "squarespace": {
+      "name": "Squarespace",
+      "type": "Website Builder",
+      "cost": "$16-49/mo",
+      "bestFor": "Beautiful portfolio sites, simple stores, personal brands",
+      "difficulty": "Easy",
+      "creatorUseCase": "Personal brand site, portfolio, simple merch store, link-in-bio replacement",
+      "pros": ["Beautiful templates", "All-in-one (hosting + domain + SSL)", "Easy to use", "Built-in analytics"],
+      "cons": ["Limited customization", "Slower than competitors", "Weak SEO tools", "No course tools"]
+    },
+    "wix": {
+      "name": "Wix",
+      "type": "Website Builder",
+      "cost": "Free (limited) or $17-35/mo",
+      "bestFor": "Quick personal sites, small business sites",
+      "difficulty": "Very Easy",
+      "creatorUseCase": "Quick personal site, event pages, simple landing pages",
+      "pros": ["Drag-and-drop easy", "AI site builder", "App market", "Free tier"],
+      "cons": ["Can't export site", "Slower page speeds", "Ads on free plan", "Not great for SEO at scale"]
+    },
+    "framer": {
+      "name": "Framer",
+      "type": "Design-to-Site Builder",
+      "cost": "Free (limited) or $5-20/mo",
+      "bestFor": "Modern animated sites, SaaS landing pages, creator portfolios",
+      "difficulty": "Moderate",
+      "creatorUseCase": "Stunning portfolio, animated landing page, waitlist page, modern brand site",
+      "pros": ["Beautiful animations", "Fast sites", "React-based", "Great templates"],
+      "cons": ["Limited CMS", "No e-commerce", "Newer = smaller community", "Learning curve for animations"]
+    },
+    "ghost": {
+      "name": "Ghost",
+      "type": "Publishing Platform",
+      "cost": "$9-199/mo (hosted) or Free (self-hosted)",
+      "bestFor": "Newsletter businesses, paid content, blogging",
+      "difficulty": "Easy-Moderate",
+      "creatorUseCase": "Paid newsletter, premium blog, membership content, SEO-driven content marketing",
+      "pros": ["Built for creators/publishers", "Native memberships + payments", "Fast", "Clean SEO", "Email built-in"],
+      "cons": ["Limited design flexibility", "No e-commerce", "Smaller ecosystem", "Self-hosting needs tech skills"]
+    },
+    "carrd": {
+      "name": "Carrd",
+      "type": "One-Page Builder",
+      "cost": "Free (limited) or $9-49/year",
+      "bestFor": "Link-in-bio pages, simple landing pages",
+      "difficulty": "Very Easy",
+      "creatorUseCase": "Link-in-bio replacement, email capture page, waitlist page, simple portfolio",
+      "pros": ["Cheapest option", "Dead simple", "Fast to build", "Custom domains"],
+      "cons": ["Single page only", "Very limited", "No blog/CMS", "Basic analytics"]
+    },
+    "gumroad": {
+      "name": "Gumroad",
+      "type": "Digital Product Platform",
+      "cost": "Free (10% transaction fee)",
+      "bestFor": "Selling digital products, courses, ebooks, templates",
+      "difficulty": "Very Easy",
+      "creatorUseCase": "Course sales, ebook/PDF sales, template packs, preset sales, digital downloads",
+      "pros": ["Zero upfront cost", "Built-in audience tools", "Simple checkout", "Email marketing"],
+      "cons": ["10% fee is high", "Limited customization", "No custom domain on free", "Basic analytics"]
+    },
+    "teachable": {
+      "name": "Teachable",
+      "type": "Course Platform",
+      "cost": "$39-199/mo",
+      "bestFor": "Online courses, coaching programs",
+      "difficulty": "Easy",
+      "creatorUseCase": "Video courses, coaching programs, bundled course packages, certification programs",
+      "pros": ["Built for courses", "Built-in payments", "Student management", "Completion certificates"],
+      "cons": ["Monthly cost", "Transaction fees on basic plan", "Limited site customization", "No marketplace discovery"]
+    },
+    "kajabi": {
+      "name": "Kajabi",
+      "type": "All-in-One Creator Platform",
+      "cost": "$149-399/mo",
+      "bestFor": "Full creator business (courses + community + email + site)",
+      "difficulty": "Moderate",
+      "creatorUseCase": "All-in-one: courses, memberships, email marketing, landing pages, podcasts, community",
+      "pros": ["Everything in one place", "No integrations needed", "Beautiful templates", "Pipeline builder"],
+      "cons": ["Expensive", "Locked into ecosystem", "Limited design flexibility", "Overkill for beginners"]
+    },
+    "stan": {
+      "name": "Stan Store",
+      "type": "Creator Storefront",
+      "cost": "$29/mo",
+      "bestFor": "Link-in-bio store, digital product sales, booking",
+      "difficulty": "Very Easy",
+      "creatorUseCase": "Link-in-bio with checkout, course sales, 1-on-1 booking, digital downloads, email capture",
+      "pros": ["Built for creators", "Replaces link-in-bio + Gumroad + Calendly", "Fast setup", "Good analytics"],
+      "cons": ["Monthly cost", "Limited customization", "Newer platform", "US-centric payments"]
+    }
+  },
+  "hardCoding": {
+    "nextjs": {
+      "name": "Next.js",
+      "type": "React Framework",
+      "language": "TypeScript/JavaScript",
+      "bestFor": "Full-stack web apps, SEO-critical sites, SaaS products",
+      "creatorUseCase": "Custom course platform, membership site, analytics dashboard, full creator business site",
+      "stack": "Next.js + Tailwind CSS + Supabase/Prisma + Vercel",
+      "difficulty": "Advanced",
+      "deployTo": ["Vercel (free tier)", "Netlify", "AWS Amplify"],
+      "pros": ["Best React framework", "SSR + SSG + ISR", "API routes built-in", "Vercel free hosting"],
+      "cons": ["Needs coding skills", "Overkill for simple sites", "Build times can grow"]
+    },
+    "astro": {
+      "name": "Astro",
+      "type": "Static Site Framework",
+      "language": "TypeScript/JavaScript",
+      "bestFor": "Blogs, documentation, content-heavy sites",
+      "creatorUseCase": "SEO blog for organic traffic, documentation site, portfolio with blog",
+      "stack": "Astro + Tailwind CSS + MDX + Cloudflare Pages",
+      "difficulty": "Intermediate",
+      "deployTo": ["Cloudflare Pages (free)", "Vercel", "Netlify"],
+      "pros": ["Fastest page loads", "Zero JS by default", "MDX for content", "Island architecture"],
+      "cons": ["Smaller ecosystem", "Less interactive", "Newer framework"]
+    },
+    "remix": {
+      "name": "Remix",
+      "type": "Full-Stack Framework",
+      "language": "TypeScript/JavaScript",
+      "bestFor": "Complex web apps with forms, auth, real-time features",
+      "creatorUseCase": "Custom community platform, interactive tools, creator dashboards",
+      "difficulty": "Advanced",
+      "pros": ["Great forms/mutations", "Progressive enhancement", "Edge-first"],
+      "cons": ["Smaller community", "Fewer tutorials", "Less ecosystem"]
+    },
+    "html_css_js": {
+      "name": "HTML + CSS + JavaScript",
+      "type": "Vanilla Web",
+      "language": "HTML/CSS/JS",
+      "bestFor": "Simple landing pages, link-in-bio, email templates",
+      "creatorUseCase": "Custom link-in-bio page, email template, simple landing page, media kit page",
+      "difficulty": "Beginner",
+      "deployTo": ["GitHub Pages (free)", "Cloudflare Pages (free)", "Netlify (free)"],
+      "pros": ["No dependencies", "Free hosting everywhere", "Full control", "Fast to learn basics"],
+      "cons": ["No CMS", "Manual updates", "No backend", "Scales poorly"]
+    },
+    "python_flask": {
+      "name": "Python (Flask/Django)",
+      "type": "Backend Framework",
+      "language": "Python",
+      "bestFor": "Custom APIs, data dashboards, AI-powered tools",
+      "creatorUseCase": "YouTube analytics dashboard, AI content tools, custom automation APIs, data-driven sites",
+      "difficulty": "Intermediate-Advanced",
+      "deployTo": ["Railway (free tier)", "Render (free tier)", "PythonAnywhere", "AWS Lambda"],
+      "pros": ["Python ecosystem", "Great for AI/ML", "Django admin panel", "Rapid prototyping"],
+      "cons": ["Needs separate frontend", "Not ideal for static sites", "Slower than Node.js for web"]
+    }
+  },
+  "recommendations": {
+    "byStage": {
+      "starter": {
+        "primary": "Carrd or Stan Store",
+        "why": "Zero to low cost, set up in 30 minutes, captures emails from day one",
+        "budget": "Free - $29/mo"
+      },
+      "builder": {
+        "primary": "WordPress (self-hosted) or Ghost",
+        "why": "SEO blog drives free traffic. Start building email list. WordPress if you want courses later, Ghost if newsletter-first.",
+        "budget": "$3-15/mo"
+      },
+      "grower": {
+        "primary": "WordPress + LearnDash OR Kajabi",
+        "why": "Course launch platform. WordPress if you want control, Kajabi if you want all-in-one convenience.",
+        "budget": "$15-149/mo"
+      },
+      "scaler": {
+        "primary": "Custom Next.js + Shopify (merch)",
+        "why": "Custom platform = full brand control + unique features competitors can't copy. Shopify for merch.",
+        "budget": "$0-100/mo (hosting) + dev time"
+      },
+      "operator": {
+        "primary": "Custom-built platform",
+        "why": "At this scale, you need a custom platform that handles your specific business model. Hire a developer or agency.",
+        "budget": "$5K-50K build + $200-1000/mo hosting"
+      }
+    },
+    "byGoal": {
+      "seo_traffic": "WordPress or Astro — best SEO capabilities",
+      "sell_courses": "Teachable (easy) or WordPress + LearnDash (flexible) or Kajabi (all-in-one)",
+      "sell_merch": "Shopify or Stan Store",
+      "sell_digital": "Gumroad (free start) or Stan Store ($29/mo)",
+      "newsletter_business": "Ghost or Substack (free) or ConvertKit (with landing pages)",
+      "portfolio": "Webflow or Framer (design-focused) or Squarespace (easy)",
+      "link_in_bio": "Carrd ($9/year) or Stan Store ($29/mo with checkout)",
+      "full_business": "Kajabi (no-code) or Next.js custom build (full control)"
+    }
+  }
+}

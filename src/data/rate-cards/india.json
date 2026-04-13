@@ -1,0 +1,102 @@
+{
+  "currency": "INR",
+  "lastUpdated": "2026-04-01",
+  "platforms": {
+    "youtube": {
+      "label": "YouTube",
+      "niches": {
+        "finance": {
+          "label": "Finance & Fintech",
+          "tiers": [
+            { "range": "10K-50K", "integration": [8000, 25000], "dedicated": [20000, 60000], "shorts": [2000, 8000] },
+            { "range": "50K-200K", "integration": [25000, 80000], "dedicated": [60000, 200000], "shorts": [8000, 25000] },
+            { "range": "200K-500K", "integration": [80000, 200000], "dedicated": [200000, 500000], "shorts": [25000, 70000] },
+            { "range": "500K-1M", "integration": [200000, 500000], "dedicated": [500000, 1200000], "shorts": [70000, 175000] },
+            { "range": "1M+", "integration": [500000, null], "dedicated": [1200000, null], "shorts": [175000, null] }
+          ]
+        },
+        "technology": {
+          "label": "Technology & Gadgets",
+          "tiers": [
+            { "range": "10K-50K", "integration": [5000, 15000], "dedicated": [15000, 40000], "shorts": [2000, 6000] },
+            { "range": "50K-200K", "integration": [15000, 50000], "dedicated": [40000, 120000], "shorts": [6000, 18000] },
+            { "range": "200K-500K", "integration": [50000, 150000], "dedicated": [120000, 350000], "shorts": [18000, 50000] },
+            { "range": "500K-1M", "integration": [150000, 400000], "dedicated": [350000, 900000], "shorts": [50000, 130000] },
+            { "range": "1M+", "integration": [400000, null], "dedicated": [900000, null], "shorts": [130000, null] }
+          ]
+        },
+        "education": {
+          "label": "Education & EdTech",
+          "tiers": [
+            { "range": "10K-50K", "integration": [5000, 18000], "dedicated": [15000, 45000], "shorts": [2000, 7000] },
+            { "range": "50K-200K", "integration": [18000, 60000], "dedicated": [45000, 150000], "shorts": [7000, 20000] },
+            { "range": "200K-500K", "integration": [60000, 180000], "dedicated": [150000, 400000], "shorts": [20000, 55000] }
+          ]
+        },
+        "health": {
+          "label": "Health & Fitness",
+          "tiers": [
+            { "range": "10K-50K", "integration": [4000, 12000], "dedicated": [12000, 35000], "shorts": [1500, 5000] },
+            { "range": "50K-200K", "integration": [12000, 40000], "dedicated": [35000, 100000], "shorts": [5000, 15000] },
+            { "range": "200K-500K", "integration": [40000, 120000], "dedicated": [100000, 300000], "shorts": [15000, 45000] }
+          ]
+        },
+        "food": {
+          "label": "Food & Cooking",
+          "tiers": [
+            { "range": "10K-50K", "integration": [3000, 10000], "dedicated": [10000, 30000], "shorts": [1500, 5000] },
+            { "range": "50K-200K", "integration": [10000, 35000], "dedicated": [30000, 90000], "shorts": [5000, 14000] },
+            { "range": "200K-500K", "integration": [35000, 100000], "dedicated": [90000, 250000], "shorts": [14000, 40000] }
+          ]
+        },
+        "beauty": {
+          "label": "Beauty & Fashion",
+          "tiers": [
+            { "range": "10K-50K", "integration": [4000, 15000], "dedicated": [12000, 40000], "shorts": [2000, 6000] },
+            { "range": "50K-200K", "integration": [15000, 50000], "dedicated": [40000, 120000], "shorts": [6000, 18000] },
+            { "range": "200K-500K", "integration": [50000, 150000], "dedicated": [120000, 350000], "shorts": [18000, 50000] }
+          ]
+        },
+        "motivation": {
+          "label": "Motivation & Business",
+          "tiers": [
+            { "range": "10K-50K", "integration": [5000, 20000], "dedicated": [15000, 50000], "shorts": [2000, 8000] },
+            { "range": "50K-200K", "integration": [20000, 70000], "dedicated": [50000, 175000], "shorts": [8000, 22000] },
+            { "range": "200K-500K", "integration": [70000, 200000], "dedicated": [175000, 450000], "shorts": [22000, 60000] }
+          ]
+        }
+      }
+    },
+    "instagram": {
+      "label": "Instagram",
+      "note": "Rates for Reels, Stories, carousels, and static posts",
+      "tiers": [
+        { "range": "10K-50K", "reel": [3000, 12000], "story": [1500, 5000], "carousel": [2000, 8000], "static": [1500, 5000] },
+        { "range": "50K-200K", "reel": [12000, 40000], "story": [5000, 15000], "carousel": [8000, 25000], "static": [5000, 15000] },
+        { "range": "200K-500K", "reel": [40000, 120000], "story": [15000, 40000], "carousel": [25000, 70000], "static": [15000, 40000] },
+        { "range": "500K-1M", "reel": [120000, 350000], "story": [40000, 100000], "carousel": [70000, 200000], "static": [40000, 100000] },
+        { "range": "1M+", "reel": [350000, null], "story": [100000, null], "carousel": [200000, null], "static": [100000, null] }
+      ]
+    },
+    "twitter": {
+      "label": "X (Twitter)",
+      "note": "Rates for tweets, threads, and Spaces",
+      "tiers": [
+        { "range": "10K-50K", "tweet": [2000, 8000], "thread": [5000, 15000], "space": [5000, 15000] },
+        { "range": "50K-200K", "tweet": [8000, 25000], "thread": [15000, 50000], "space": [15000, 50000] },
+        { "range": "200K-500K", "tweet": [25000, 80000], "thread": [50000, 150000], "space": [50000, 150000] },
+        { "range": "500K-1M", "tweet": [80000, 200000], "thread": [150000, 400000], "space": [150000, 400000] }
+      ]
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "note": "B2B rates — typically 2-3x higher than equivalent Instagram rates for professional niches",
+      "tiers": [
+        { "range": "10K-50K", "post": [5000, 20000], "newsletter": [10000, 30000], "carousel": [8000, 25000] },
+        { "range": "50K-200K", "post": [20000, 70000], "newsletter": [30000, 100000], "carousel": [25000, 80000] },
+        { "range": "200K+", "post": [70000, 200000], "newsletter": [100000, 300000], "carousel": [80000, 200000] }
+      ]
+    }
+  },
+  "bundlePremium": "30-50% premium for multi-platform bundles (YouTube + Reels + Stories + Newsletter)"
+}

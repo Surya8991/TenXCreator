@@ -1,0 +1,77 @@
+{
+  "lastUpdated": "2026-04-01",
+  "categories": {
+    "scriptwriting": {
+      "label": "Scriptwriting & Ideation",
+      "tools": [
+        { "name": "ChatGPT", "free": true, "best_for": "Brainstorming, outlines, first drafts" },
+        { "name": "Claude", "free": true, "best_for": "Long-form scripts, nuanced content" },
+        { "name": "Gemini", "free": true, "best_for": "Research-heavy scripts, fact-checking" }
+      ]
+    },
+    "videoEditing": {
+      "label": "Video Editing",
+      "tools": [
+        { "name": "CapCut", "free": true, "best_for": "Shorts, quick edits, trending effects" },
+        { "name": "DaVinci Resolve", "free": true, "best_for": "Professional editing, color grading" },
+        { "name": "Adobe Premiere Pro", "free": false, "best_for": "Industry standard, team workflows" }
+      ]
+    },
+    "thumbnails": {
+      "label": "Thumbnail Creation",
+      "tools": [
+        { "name": "Canva", "free": true, "best_for": "Quick thumbnails, templates" },
+        { "name": "Photoshop", "free": false, "best_for": "Advanced manipulation" },
+        { "name": "Midjourney", "free": false, "best_for": "AI-generated thumbnail backgrounds" }
+      ]
+    },
+    "seo": {
+      "label": "YouTube SEO",
+      "tools": [
+        { "name": "VidIQ", "free": true, "best_for": "Keyword research, competitor analysis" },
+        { "name": "TubeBuddy", "free": true, "best_for": "Tag optimization, A/B testing" }
+      ]
+    },
+    "shortFormAutomation": {
+      "label": "Short-Form Automation",
+      "tools": [
+        { "name": "Opus Clip", "free": true, "best_for": "Auto-clip long videos into Shorts" },
+        { "name": "Vizard", "free": true, "best_for": "AI-powered clip selection" }
+      ]
+    },
+    "audio": {
+      "label": "Audio & Voice",
+      "tools": [
+        { "name": "Adobe Podcast Enhance", "free": true, "best_for": "Noise removal, voice enhancement" },
+        { "name": "Descript", "free": true, "best_for": "Transcript-based editing" },
+        { "name": "ElevenLabs", "free": true, "best_for": "AI voiceover, multilingual" }
+      ]
+    },
+    "automation": {
+      "label": "Workflow Automation",
+      "tools": [
+        { "name": "Make (Integromat)", "free": true, "best_for": "Multi-step automations" },
+        { "name": "Zapier", "free": true, "best_for": "Simple app-to-app connections" },
+        { "name": "Notion", "free": true, "best_for": "Content calendar, project management" }
+      ]
+    },
+    "community": {
+      "label": "Community Platforms",
+      "tools": [
+        { "name": "Telegram", "best_for": "Best for Indian audiences, high adoption" },
+        { "name": "WhatsApp Communities", "best_for": "Deepest engagement for Indian creators" },
+        { "name": "Discord", "best_for": "Tech-savvy younger audiences, global reach" },
+        { "name": "YouTube Memberships", "best_for": "Highest value — members self-select by paying" }
+      ]
+    },
+    "globalBrandPlatforms": {
+      "label": "Global Brand Deal Platforms",
+      "tools": [
+        { "name": "AspireIQ", "best_for": "Global brand campaigns" },
+        { "name": "Grin", "best_for": "DTC brand partnerships" },
+        { "name": "Captiv8", "best_for": "Enterprise brand deals" },
+        { "name": "Creator.co", "best_for": "Emerging creators, diverse campaigns" }
+      ]
+    }
+  }
+}

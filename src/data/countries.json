@@ -1,0 +1,305 @@
+{
+  "lastUpdated": "2026-04-01",
+  "countries": {
+    "IN": {
+      "name": "India",
+      "currency": "INR",
+      "symbol": "₹",
+      "cpmRange": [0.5, 3],
+      "topPlatforms": ["YouTube", "Instagram", "Facebook", "WhatsApp"],
+      "tax": {
+        "incomeTax": "5-30% slab based",
+        "creatorTax": "GST 18% above ₹20L turnover. TDS 10% on brand deals. Advance tax quarterly.",
+        "deductions": "Section 80C (₹1.5L), 80CCD (₹50K NPS), business expenses deductible"
+      },
+      "regulations": "ASCI disclosure guidelines for paid content. COPPA applies for US viewers. No TikTok (banned).",
+      "brandDealMultiplier": 1.0,
+      "notes": "Largest creator ecosystem by volume. WhatsApp #1 sharing platform. Regional language = deeper loyalty."
+    },
+    "US": {
+      "name": "United States",
+      "currency": "USD",
+      "symbol": "$",
+      "cpmRange": [5, 40],
+      "topPlatforms": ["YouTube", "TikTok", "Instagram", "X"],
+      "tax": {
+        "incomeTax": "10-37% federal + state varies",
+        "creatorTax": "Self-employment tax 15.3%. Quarterly estimated tax. 1099 forms from platforms.",
+        "deductions": "Home office, equipment, software, travel, health insurance, retirement (SEP IRA)"
+      },
+      "regulations": "FTC disclosure required (#ad, #sponsored). COPPA for kids content. Section 230 protections.",
+      "brandDealMultiplier": 5.0,
+      "notes": "Highest CPMs globally. Brands pay premium. Tax complexity high — get a CPA."
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "currency": "GBP",
+      "symbol": "£",
+      "cpmRange": [4, 25],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "X"],
+      "tax": {
+        "incomeTax": "20-45% PAYE bands",
+        "creatorTax": "Self-assessment tax return. Register as sole trader or Ltd company. VAT registration above £85K.",
+        "deductions": "Equipment, software, home office, travel, training"
+      },
+      "regulations": "ASA disclosure rules (strict). CAP Code for advertising. GDPR for data collection.",
+      "brandDealMultiplier": 4.0,
+      "notes": "Strong brand deal market. ASA enforces disclosure aggressively."
+    },
+    "CA": {
+      "name": "Canada",
+      "currency": "CAD",
+      "symbol": "C$",
+      "cpmRange": [4, 20],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok"],
+      "tax": {
+        "incomeTax": "15-33% federal + provincial",
+        "creatorTax": "GST/HST registration above C$30K. Quarterly installments if tax >C$3000.",
+        "deductions": "Equipment, internet, home office, vehicle for content, software"
+      },
+      "regulations": "Competition Bureau disclosure guidelines. PIPEDA for privacy. French language requirements in Quebec.",
+      "brandDealMultiplier": 3.5,
+      "notes": "High CPMs. Bilingual market opportunity (English + French)."
+    },
+    "AU": {
+      "name": "Australia",
+      "currency": "AUD",
+      "symbol": "A$",
+      "cpmRange": [5, 20],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok"],
+      "tax": {
+        "incomeTax": "19-45% marginal rates",
+        "creatorTax": "ABN required. GST registration above A$75K. BAS quarterly.",
+        "deductions": "Equipment, software, home office, travel, phone/internet"
+      },
+      "regulations": "ACCC disclosure requirements. Australian Consumer Law applies to product claims.",
+      "brandDealMultiplier": 3.5,
+      "notes": "High CPMs. Small but affluent market. Strong fitness/outdoor niches."
+    },
+    "DE": {
+      "name": "Germany",
+      "currency": "EUR",
+      "symbol": "€",
+      "cpmRange": [4, 20],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok"],
+      "tax": {
+        "incomeTax": "14-45% progressive",
+        "creatorTax": "Freelancer registration (Freiberufler). VAT 19%. Quarterly advance payments.",
+        "deductions": "Equipment, studio, internet, travel, education"
+      },
+      "regulations": "Strict GDPR enforcement. TMG/MStV disclosure. Impressum required on all platforms.",
+      "brandDealMultiplier": 3.5,
+      "notes": "Largest European market. German language content has captive audience. Strict advertising laws."
+    },
+    "BR": {
+      "name": "Brazil",
+      "currency": "BRL",
+      "symbol": "R$",
+      "cpmRange": [0.5, 5],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "WhatsApp"],
+      "tax": {
+        "incomeTax": "7.5-27.5% progressive",
+        "creatorTax": "MEI (Microempreendedor) for small creators. INSS social security contribution.",
+        "deductions": "Business expenses, health, education"
+      },
+      "regulations": "CONAR advertising self-regulation. CDC consumer protection. Marco Civil for internet.",
+      "brandDealMultiplier": 1.5,
+      "notes": "Massive audience. Portuguese content. WhatsApp dominant for sharing. Growing creator economy."
+    },
+    "MX": {
+      "name": "Mexico",
+      "currency": "MXN",
+      "symbol": "MX$",
+      "cpmRange": [0.5, 4],
+      "topPlatforms": ["YouTube", "TikTok", "Instagram", "Facebook"],
+      "tax": {
+        "incomeTax": "1.92-35% progressive",
+        "creatorTax": "RFC registration. Monthly ISR and IVA declarations. RESICO simplified regime for small creators.",
+        "deductions": "Equipment, internet, office, professional development"
+      },
+      "regulations": "PROFECO consumer protection. Ley Federal de Protección de Datos Personales.",
+      "brandDealMultiplier": 1.2,
+      "notes": "Largest Spanish-speaking YouTube market. Facebook still strong."
+    },
+    "JP": {
+      "name": "Japan",
+      "currency": "JPY",
+      "symbol": "¥",
+      "cpmRange": [3, 15],
+      "topPlatforms": ["YouTube", "X", "TikTok", "Instagram"],
+      "tax": {
+        "incomeTax": "5-45% national + 10% local",
+        "creatorTax": "Blue/white tax return. Consumption tax 10% above ¥10M. Invoice system required.",
+        "deductions": "Equipment, studio, communication, travel, entertainment for content"
+      },
+      "regulations": "Act on Specified Commercial Transactions. Stealth marketing banned (Oct 2023).",
+      "brandDealMultiplier": 3.0,
+      "notes": "Twitter/X is huge in Japan. VTuber culture. High ad spending. Japanese-only content performs best."
+    },
+    "KR": {
+      "name": "South Korea",
+      "currency": "KRW",
+      "symbol": "₩",
+      "cpmRange": [2, 12],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "Naver"],
+      "tax": {
+        "incomeTax": "6-45% progressive",
+        "creatorTax": "Business income reporting. VAT 10%. Simplified tax for small creators.",
+        "deductions": "Equipment, studio, internet, content production costs"
+      },
+      "regulations": "Fair Trade Commission disclosure rules. Strict advertising standards.",
+      "brandDealMultiplier": 2.5,
+      "notes": "K-beauty, K-pop, tech niches huge. Naver Blog still relevant. Short-form content dominant."
+    },
+    "ID": {
+      "name": "Indonesia",
+      "currency": "IDR",
+      "symbol": "Rp",
+      "cpmRange": [0.3, 2],
+      "topPlatforms": ["YouTube", "TikTok", "Instagram"],
+      "tax": {
+        "incomeTax": "5-35% progressive",
+        "creatorTax": "NPWP tax ID required. 0.5% final tax for micro businesses under IDR 500M/year.",
+        "deductions": "Limited for individuals"
+      },
+      "regulations": "Ministry of Communication oversight. Content moderation laws.",
+      "brandDealMultiplier": 0.8,
+      "notes": "4th largest population. TikTok Shop massive. Muslim-majority = Ramadan content peaks."
+    },
+    "PH": {
+      "name": "Philippines",
+      "currency": "PHP",
+      "symbol": "₱",
+      "cpmRange": [0.3, 2],
+      "topPlatforms": ["YouTube", "TikTok", "Facebook", "Instagram"],
+      "tax": {
+        "incomeTax": "0-35% graduated",
+        "creatorTax": "BIR registration. Percentage tax 3% for gross under ₱3M or VAT 12% above.",
+        "deductions": "Itemized or optional standard deduction (40%)"
+      },
+      "regulations": "DTI advertising standards. Data Privacy Act.",
+      "brandDealMultiplier": 0.8,
+      "notes": "English-speaking. Facebook dominant. High social media usage per capita. Growing fast."
+    },
+    "NG": {
+      "name": "Nigeria",
+      "currency": "NGN",
+      "symbol": "₦",
+      "cpmRange": [0.2, 1.5],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "X"],
+      "tax": {
+        "incomeTax": "7-24% progressive",
+        "creatorTax": "Company income tax if structured. VAT 7.5%. Register with FIRS.",
+        "deductions": "Business-related expenses"
+      },
+      "regulations": "APCON advertising regulation. Nigeria Data Protection Act.",
+      "brandDealMultiplier": 0.6,
+      "notes": "Largest African creator market. Nollywood/entertainment huge. Twitter culture strong."
+    },
+    "AE": {
+      "name": "UAE",
+      "currency": "AED",
+      "symbol": "AED",
+      "cpmRange": [3, 15],
+      "topPlatforms": ["Instagram", "YouTube", "TikTok", "Snapchat"],
+      "tax": {
+        "incomeTax": "0% personal income tax",
+        "creatorTax": "Corporate tax 9% above AED 375K profit (if structured as business). VAT 5%.",
+        "deductions": "Business expenses if registered"
+      },
+      "regulations": "NMC National Media Council licensing for influencers. Strict content laws. No crypto/alcohol promotion.",
+      "brandDealMultiplier": 4.0,
+      "notes": "Tax-free income. Luxury brands pay premium. Influencer licensing required. Snapchat big here."
+    },
+    "SA": {
+      "name": "Saudi Arabia",
+      "currency": "SAR",
+      "symbol": "SAR",
+      "cpmRange": [2, 10],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "Snapchat"],
+      "tax": {
+        "incomeTax": "0% personal income tax (citizens). Zakat 2.5%.",
+        "creatorTax": "Freelance permit required (Marshad). VAT 15%.",
+        "deductions": "Business expenses if licensed"
+      },
+      "regulations": "CITC content regulations. Vision 2030 entertainment push. Content restrictions apply.",
+      "brandDealMultiplier": 3.0,
+      "notes": "Rapidly growing. Snapchat penetration highest globally. Entertainment sector booming."
+    },
+    "SG": {
+      "name": "Singapore",
+      "currency": "SGD",
+      "symbol": "S$",
+      "cpmRange": [3, 15],
+      "topPlatforms": ["Instagram", "YouTube", "TikTok", "LinkedIn"],
+      "tax": {
+        "incomeTax": "0-22% progressive",
+        "creatorTax": "Register as sole proprietor or Pte Ltd. GST 9% above S$1M revenue.",
+        "deductions": "Equipment, software, home office, marketing"
+      },
+      "regulations": "ASAS advertising standards. PDPA for data protection.",
+      "brandDealMultiplier": 3.5,
+      "notes": "Small but affluent. Hub for Southeast Asian brand deals. LinkedIn strong for B2B."
+    },
+    "TR": {
+      "name": "Turkey",
+      "currency": "TRY",
+      "symbol": "₺",
+      "cpmRange": [0.5, 3],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "X"],
+      "tax": {
+        "incomeTax": "15-40% progressive",
+        "creatorTax": "Stoppage tax on ad income. VAT 20%. Tax-free threshold for small earnings.",
+        "deductions": "Content production expenses"
+      },
+      "regulations": "BTK social media law. Advertising board (RK) guidelines. Content moderation requirements.",
+      "brandDealMultiplier": 1.0,
+      "notes": "Large young population. Turkish-language content captive audience. E-commerce integration growing."
+    },
+    "FR": {
+      "name": "France",
+      "currency": "EUR",
+      "symbol": "€",
+      "cpmRange": [3, 15],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok"],
+      "tax": {
+        "incomeTax": "11-45% progressive",
+        "creatorTax": "Micro-entrepreneur regime (auto-entrepreneur) for small creators. TVA 20%.",
+        "deductions": "Equipment, training, home office under micro-entrepreneur"
+      },
+      "regulations": "2023 Influencer Law (strictest in world). Mandatory disclosure. Filter disclosure on edited images. CNIL/GDPR.",
+      "brandDealMultiplier": 3.0,
+      "notes": "World's strictest influencer law. French content mandatory for French audience. Strong luxury brand market."
+    },
+    "ZA": {
+      "name": "South Africa",
+      "currency": "ZAR",
+      "symbol": "R",
+      "cpmRange": [0.5, 4],
+      "topPlatforms": ["YouTube", "Instagram", "TikTok", "Facebook"],
+      "tax": {
+        "incomeTax": "18-45% progressive",
+        "creatorTax": "Register as provisional taxpayer. VAT 15% above R1M turnover.",
+        "deductions": "Equipment, internet, home office, travel for content"
+      },
+      "regulations": "ASA advertising code. POPIA data protection. CPA consumer protection.",
+      "brandDealMultiplier": 1.5,
+      "notes": "Largest African English-speaking market. Growing creator economy. Multi-lingual content opportunity."
+    },
+    "TH": {
+      "name": "Thailand",
+      "currency": "THB",
+      "symbol": "฿",
+      "cpmRange": [0.5, 3],
+      "topPlatforms": ["YouTube", "TikTok", "Instagram", "Facebook", "LINE"],
+      "tax": {
+        "incomeTax": "5-35% progressive",
+        "creatorTax": "Personal income tax on worldwide income. VAT 7% above ฿1.8M revenue.",
+        "deductions": "Equipment, production costs, business-related expenses"
+      },
+      "regulations": "Computer Crime Act. Advertising content regulations. Platform-specific compliance.",
+      "brandDealMultiplier": 1.2,
+      "notes": "LINE is major platform. Thai-language content dominates. Beauty and food niches huge."
+    }
+  }
+}

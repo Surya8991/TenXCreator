@@ -1,0 +1,36 @@
+{
+  "lastUpdated": "2026-04-01",
+  "ctr": {
+    "good": { "min": 5, "label": "5%+ CTR is strong" },
+    "average": { "min": 2, "max": 5, "label": "2-5% CTR is average" },
+    "bad": { "max": 2, "label": "Below 2% CTR needs thumbnail/title work" }
+  },
+  "avd": {
+    "good": { "min": 50, "label": "50%+ AVD is excellent" },
+    "average": { "min": 30, "max": 50, "label": "30-50% AVD is average" },
+    "bad": { "max": 30, "label": "Below 30% AVD indicates content structure issues" }
+  },
+  "subscriberConversion": {
+    "good": { "min": 3, "label": "3%+ sub rate per view is strong" },
+    "average": { "min": 1, "max": 3 },
+    "bad": { "max": 1 }
+  },
+  "uploadFrequency": {
+    "starter": "2-3 videos/week for growth phase",
+    "established": "1-2 videos/week for quality phase",
+    "shorts": "3-5 Shorts/week regardless of stage"
+  },
+  "revenuePerMille": {
+    "india": { "range": [0.5, 3], "note": "INR CPM varies by niche" },
+    "us": { "range": [5, 40], "note": "USD CPM, highest in finance/tech" },
+    "uk": { "range": [4, 25] },
+    "global_average": { "range": [2, 10] }
+  },
+  "creatorStages": [
+    { "stage": 1, "label": "Starter", "subscribers": "0-1K", "focus": "Niche validation, consistency, basic SEO" },
+    { "stage": 2, "label": "Builder", "subscribers": "1K-10K", "focus": "Quality improvement, first sponsorships, email list" },
+    { "stage": 3, "label": "Grower", "subscribers": "10K-100K", "focus": "Income diversification, courses, SEO architecture" },
+    { "stage": 4, "label": "Scaler", "subscribers": "100K-1M", "focus": "Team building, systems, brand ambassadorships" },
+    { "stage": 5, "label": "Operator", "subscribers": "1M+", "focus": "Brand equity, licensing, IP, financial independence" }
+  ]
+}

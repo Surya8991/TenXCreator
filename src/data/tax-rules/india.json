@@ -1,0 +1,46 @@
+{
+  "lastUpdated": "2026-04-01",
+  "gst": {
+    "registrationThreshold": 2000000,
+    "rate": 18,
+    "note": "GST registration mandatory when annual turnover exceeds 20 lakh INR",
+    "exportOfService": "Zero-rated under IGST for payments from foreign brands",
+    "filingFrequency": "Quarterly for turnover under 5 crore, monthly otherwise"
+  },
+  "incomeTax": {
+    "slabs2026": [
+      { "from": 0, "to": 300000, "rate": 0 },
+      { "from": 300001, "to": 700000, "rate": 5 },
+      { "from": 700001, "to": 1000000, "rate": 10 },
+      { "from": 1000001, "to": 1200000, "rate": 15 },
+      { "from": 1200001, "to": 1500000, "rate": 20 },
+      { "from": 1500001, "to": null, "rate": 30 }
+    ],
+    "advanceTaxDeadlines": [
+      { "date": "June 15", "cumulative": 15 },
+      { "date": "September 15", "cumulative": 45 },
+      { "date": "December 15", "cumulative": 75 },
+      { "date": "March 15", "cumulative": 100 }
+    ],
+    "section80C": { "limit": 150000, "instruments": ["PPF", "ELSS", "Life Insurance", "NPS Tier 1"] },
+    "section80CCD": { "additionalLimit": 50000, "instrument": "NPS" }
+  },
+  "tds": {
+    "brandDeals": { "section": "194R / 194C", "rate": 10, "note": "Indian brands deduct TDS; claim credit when filing ITR" },
+    "adSense": { "note": "No TDS on AdSense income from Google (foreign remittance)" }
+  },
+  "allowableBusinessExpenses": [
+    "Equipment (camera, mic, lighting)",
+    "Internet and mobile bills",
+    "Editing software subscriptions",
+    "Studio rent or home office proportion",
+    "Travel for content creation",
+    "Contractor payments (editors, designers)",
+    "Professional development courses"
+  ],
+  "businessStructures": [
+    { "type": "Sole Proprietor", "bestFor": "Income under 20 lakh", "pros": "Simple, no compliance overhead", "cons": "Unlimited personal liability" },
+    { "type": "One Person Company", "bestFor": "20 lakh to 50 lakh", "pros": "Limited liability, single owner", "cons": "More compliance than sole prop" },
+    { "type": "Private Limited", "bestFor": "Above 50 lakh", "pros": "Best for investment, hiring, scale", "cons": "Higher compliance, audit requirements" }
+  ]
+}
