@@ -1,7 +1,26 @@
 import { UNIFIED_ADVISOR_PROMPT, QUICK_MODES, getModeInstruction, detectDomainTag, type DomainTag, type QuickMode } from './prompts/unified';
+import { CONTENT_STRATEGY_PROMPT } from './prompts/content-strategy';
+import { EMAIL_STRATEGY_PROMPT } from './prompts/email-strategy';
+import { SEO_CONTENT_PROMPT } from './prompts/seo-content';
+import { MEDIA_PITCH_PROMPT } from './prompts/media-pitch';
 
 // Re-export for backward compatibility
 export type AdvisorType = DomainTag;
+
+// Modes that require an injected domain-specific prompt supplement
+const DOMAIN_PROMPT_MAP: Record<string, string> = {
+  'blog-pillar': CONTENT_STRATEGY_PROMPT,
+  'blog-spoke': CONTENT_STRATEGY_PROMPT,
+  'blog-decision': CONTENT_STRATEGY_PROMPT,
+  'geo-optimize': CONTENT_STRATEGY_PROMPT,
+  'geo-audit': SEO_CONTENT_PROMPT,
+  'seo-content': SEO_CONTENT_PROMPT,
+  'newsletter': EMAIL_STRATEGY_PROMPT,
+  'nurture-sequence': EMAIL_STRATEGY_PROMPT,
+  'subject-lines': EMAIL_STRATEGY_PROMPT,
+  'media-pitch': MEDIA_PITCH_PROMPT,
+  'pitch-subject': MEDIA_PITCH_PROMPT,
+};
 
 export function routeMessage(message: string): {
   systemPrompt: string;
@@ -17,9 +36,15 @@ export function getSystemPromptWithMode(mode: string, message: string): {
 } {
   const instruction = getModeInstruction(mode);
   const domainTag = detectDomainTag(message);
-  const prompt = instruction
-    ? `${UNIFIED_ADVISOR_PROMPT}\n\nACTIVE MODE: ${mode}\n${instruction}`
-    : UNIFIED_ADVISOR_PROMPT;
+  const domainSupplement = DOMAIN_PROMPT_MAP[mode];
+
+  let prompt = UNIFIED_ADVISOR_PROMPT;
+  if (domainSupplement) {
+    prompt += `\n\n---\nDOMAIN KNOWLEDGE FOR THIS MODE:\n${domainSupplement}`;
+  }
+  if (instruction) {
+    prompt += `\n\nACTIVE MODE: ${mode}\n${instruction}`;
+  }
   return { systemPrompt: prompt, domainTag };
 }
 

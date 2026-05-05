@@ -15,10 +15,12 @@ AI-powered business advisor built for content creators. Get real-time, actionabl
 ## Features
 
 - **Three AI Advisors** — Growth (content & SEO), Business (deals & taxes), Operations (analytics & tech) — auto-routed based on your question
-- **9 Quick Modes** — Hook Lab, Deal Review, Rate Card Generator, Data Crisis, Contract Review, Weekly Audit, Content Calendar, Quick Win, Website Advisor
+- **20 Quick Modes** — Hook Lab, Video Script, Deal Review, Rate Card, Data Crisis, Contract Review, Case Study, Weekly Review, Content Calendar, Quick Win, Website Advisor, Newsletter, Nurture Sequence, Pillar Page, Spoke Article, Decision Article, GEO Audit, SEO Content, Media Pitch, Repurpose Content
 - **Real Rate Cards** — Platform-specific rates by niche, tier, and country (not guesses)
 - **Tax Intelligence** — GST, TDS, income tax slabs, advance tax deadlines for India + global rules
 - **Progressive Profiling** — Learns your niche, stage, country, and platforms from conversation
+- **Human Writing Standards** — Every response enforces active voice, sourced statistics, and zero AI filler phrases
+- **Creator DataBank** — Cited stats library for brand deals, pitches, and content (mirrors HARO pitch-ready format)
 - **Multi-LLM** — Gemini 2.0 Flash (primary) with Groq Llama 3.3 auto-fallback
 - **Works Without a Backend** — Fully functional with localStorage; Supabase optional
 - **Voice Input** — Speech-to-text for hands-free interaction
@@ -81,10 +83,18 @@ src/
     shared/               # AuthProvider, ThemeProvider, ErrorBoundary, Skeleton
   lib/
     llm/                  # Gemini + Groq providers with auto-fallback
-    prompts/              # Unified advisor system prompt + 9 quick modes
+    prompts/
+      unified.ts          # Core advisor system prompt + 20 quick modes
+      growth.ts           # Growth advisor: YouTube retention, LinkedIn, repurpose, platform KPIs
+      business.ts         # Business advisor: brand deals, contracts, case study framework
+      operations.ts       # Operations advisor: analytics, SEO benchmarks, repurposing KPIs
+      content-strategy.ts # Blog writing: Pillar/Spoke/Decision types, 4-layer chunk format
+      email-strategy.ts   # Newsletter 8-block structure, 5-email nurture sequence
+      seo-content.ts      # GEO/AEO framework for AI search citation (Google AIO, Perplexity, ChatGPT)
+      media-pitch.ts      # HARO/Featured 5-block pitch structure, CARE checklist
     rag/                  # RAG search (rate cards, tax rules, benchmarks)
     db/                   # Supabase client, auth, conversations, creators
-    router.ts             # Smart advisor domain routing
+    router.ts             # Smart advisor routing + domain-specific prompt injection
     profile-extractor.ts  # Extract niche/stage/country from messages
     constants.ts          # Storage keys, creator stages, limits
   data/
@@ -93,6 +103,7 @@ src/
     tax-rules/            # GST, income tax, TDS rules
     benchmarks/           # YouTube CTR, AVD, engagement benchmarks
     tools/                # Creator tools & website platforms
+    creator-databank.json # Cited creator economy stats for pitches, deals, and content
 supabase/
   migrations/             # SQL migrations (creators, conversations, metrics)
 ```
@@ -101,25 +112,53 @@ supabase/
 
 | Advisor | Domain | Examples |
 |---------|--------|----------|
-| Growth | Content strategy, SEO, viral hooks, thumbnails, upload schedules | "How do I improve my CTR?", "Give me hooks for a finance video" |
-| Business | Brand deals, rate cards, contracts, tax, negotiation | "What should I charge for a YouTube integration?", "Review this brand deal" |
-| Operations | Analytics, community, tech stack, AI tools | "My views dropped 40%, what happened?", "Best editing tools for beginners?" |
+| Growth | Content strategy, SEO, viral hooks, thumbnails, video scripts, repurposing, email, media pitching | "How do I improve my CTR?", "Write me hooks for a finance video", "Build my repurposing plan for this article" |
+| Business | Brand deals, rate cards, contracts, tax, negotiation, case studies | "What should I charge for a YouTube integration?", "Review this brand deal", "Write a case study from these results" |
+| Operations | Analytics, community, tech stack, AI tools, SEO benchmarks | "My views dropped 40%, what happened?", "Audit my content for AI search citation", "Best editing tools for beginners?" |
 
 The system auto-routes your question to the right advisor based on keywords. No manual switching needed.
 
 ## Quick Modes
 
+### Growth & Content
 | Mode | What It Does |
 |------|-------------|
-| Hook Lab | 5 viral hook options ranked by emotional psychology |
+| Hook Lab | 5 viral hooks ranked by emotional psychology + thumbnail and title options |
+| Video Script | Full YouTube script (Short / How-to / Case Study) with retention structure and visual direction |
+| Content Calendar | 30-day cross-platform content plan |
+| Repurpose Content | Full derivative map from one source asset (article, video, case study, research) |
+| Quick Win | Single best action for the next 24 hours |
+
+### Writing & SEO
+| Mode | What It Does |
+|------|-------------|
+| Pillar Page | 2,000-3,500 word authoritative hub article with 4-layer chunk format |
+| Spoke Article | 1,000-1,800 word deep-dive on a specific creator subtopic |
+| Decision Article | 800-1,400 word comparison piece for creators evaluating tools or platforms |
+| SEO Content | GEO-optimized article structured for AI search citation (Google AIO, Perplexity, ChatGPT) |
+| GEO Audit | Score existing content against 11 AI citation criteria with specific fixes |
+
+### Email & Outreach
+| Mode | What It Does |
+|------|-------------|
+| Newsletter | Single value-first email using the 8-block structure with subject line options |
+| Nurture Sequence | 5-email onboarding arc for new subscribers (Day 0 → Day 14) |
+| Media Pitch | HARO/Featured journalist pitch using the 5-block structure and CARE checklist |
+
+### Business & Deals
+| Mode | What It Does |
+|------|-------------|
 | Deal Review | Evaluate a brand deal against market rates |
 | Rate Card | Generate your rate card in INR + USD |
-| Data Crisis | Emergency diagnostic for metric drops |
-| Contract Review | Flag red flags with alternative contract language |
-| Weekly Review | 360-degree assessment across all domains |
-| Content Calendar | 30-day cross-platform content plan |
-| Quick Win | Single best action for the next 24 hours |
-| Website Advisor | CMS & hosting platform recommendations |
+| Contract Review | Flag red flags with exact alternative contract language |
+| Case Study | Creator case study using the BAB-Plus framework with metrics enforcement |
+| Weekly Review | 360-degree assessment across all three advisor domains |
+
+### Operations
+| Mode | What It Does |
+|------|-------------|
+| Data Crisis | Emergency diagnostic for metric drops across any platform |
+| Website Advisor | CMS & hosting platform recommendations by stage |
 
 ## Creator Stages
 
