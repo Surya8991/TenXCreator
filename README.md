@@ -15,7 +15,7 @@ AI-powered business advisor built for content creators. Get real-time, actionabl
 ## Features
 
 - **Three AI Advisors** — Growth (content & SEO), Business (deals & taxes), Operations (analytics & tech) — auto-routed based on your question
-- **20 Quick Modes** — Hook Lab, Video Script, Deal Review, Rate Card, Data Crisis, Contract Review, Case Study, Weekly Review, Content Calendar, Quick Win, Website Advisor, Newsletter, Nurture Sequence, Pillar Page, Spoke Article, Decision Article, GEO Audit, SEO Content, Media Pitch, Repurpose Content
+- **23 Quick Modes** — Hook Lab, Video Script, Deal Review, Rate Card, Data Crisis, Contract Review, Case Study, Weekly Review, Content Calendar, Quick Win, Website Advisor, Newsletter, Nurture Sequence, Subject Lines, Pillar Page, Spoke Article, Decision Article, GEO Audit, GEO Optimize, SEO Content, Media Pitch, Pitch Subject Lines, Repurpose Content
 - **Real Rate Cards** — 11 niches × 5 tiers in INR and USD (finance, tech, education, health, beauty, food, gaming, lifestyle, crypto, travel, business) across India and global markets
 - **Tax Intelligence** — GST, TDS (brand deals 194R, affiliate 194H, course sales, contractor 194J), income tax slabs + 87A rebate, advance tax, penalty rules (234B/C/F), 17 allowable expense categories, business structure guide (Sole Prop → OPC → LLP → Pvt Ltd)
 - **Platform Benchmarks** — YouTube, Instagram, TikTok, LinkedIn, podcast, and newsletter KPIs with exact numbers by platform
@@ -77,8 +77,8 @@ src/
     pricing/              # Free vs Pro plans
     auth/                 # Login & OAuth callback
     api/
-      chat/route.ts       # Main chat streaming endpoint
-      rate-card/route.ts  # Rate card generation API
+      chat/route.ts       # Main chat streaming endpoint with LLM error classification
+      rate-card/route.ts  # Rate card API with niche normalisation across India/global schemas
   components/
     chat/                 # ChatWindow, MessageBubble, ModeSelector, VoiceInput, etc.
     landing/              # Hero, Features
@@ -86,7 +86,7 @@ src/
   lib/
     llm/                  # Gemini + Groq providers with auto-fallback
     prompts/
-      unified.ts          # Core advisor system prompt + 20 quick modes
+      unified.ts          # Core advisor system prompt + 23 quick modes
       growth.ts           # Growth advisor: YouTube retention, LinkedIn, repurpose, platform KPIs
       business.ts         # Business advisor: brand deals, contracts, case study framework
       operations.ts       # Operations advisor: analytics, SEO benchmarks, repurposing KPIs
@@ -146,13 +146,16 @@ The system auto-routes your question to the right advisor based on keywords. No 
 | Decision Article | 800-1,400 word comparison piece for creators evaluating tools or platforms |
 | SEO Content | GEO-optimized article structured for AI search citation (Google AIO, Perplexity, ChatGPT) |
 | GEO Audit | Score existing content against 11 AI citation criteria with specific fixes |
+| GEO Optimize | Rewrite existing content in-place to earn AI search citations |
 
 ### Email & Outreach
 | Mode | What It Does |
 |------|-------------|
 | Newsletter | Single value-first email using the 8-block structure with subject line options |
 | Nurture Sequence | 5-email onboarding arc for new subscribers (Day 0 → Day 14) |
+| Subject Lines | 6 subject line + preview text options across different patterns, each under 33 chars |
 | Media Pitch | HARO/Featured journalist pitch using the 5-block structure and CARE checklist |
+| Pitch Subject Lines | 5 subject line options for a media pitch, credential-led, under 10 words each |
 
 ### Business & Deals
 | Mode | What It Does |
@@ -194,8 +197,8 @@ Rate cards, advice, and benchmarks are tailored to your stage.
 
 ## Rate Limiting
 
-- **Server:** 20 requests/minute per IP
-- **Client:** 10 requests/minute
+- **Server:** 20 requests/minute per IP (in-memory; resets on cold start)
+- **Client:** 10 requests/minute — persisted in `localStorage` so the counter is accurate across tabs and page reloads
 - **Free plan:** 10 messages/day
 - **Pro plan:** Unlimited
 
