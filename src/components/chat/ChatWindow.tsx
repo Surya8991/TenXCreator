@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { Send, RotateCcw, Share2, Copy, Check } from 'lucide-react';
+import { useState, useRef, useEffect, useCallback, useTransition } from 'react';
+import { Send, RotateCcw, Share2, Copy, Check, AlertTriangle } from 'lucide-react';
 import { MessageBubble } from './MessageBubble';
 import { ModeSelector } from './ModeSelector';
 import { ShareCard } from './ShareCard';
@@ -25,21 +25,33 @@ type CreatorContext = {
   country?: string;
 };
 
-// Rate limit tracker — module-level is intentional (single ChatWindow instance per page)
-let requestTimestamps: number[] = [];
+const RATE_LS_KEY = 'tenx-rate-timestamps';
+
+function loadTimestamps(): number[] {
+  try {
+    const raw = localStorage.getItem(RATE_LS_KEY);
+    return raw ? (JSON.parse(raw) as number[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveTimestamps(ts: number[]): void {
+  try { localStorage.setItem(RATE_LS_KEY, JSON.stringify(ts)); } catch { /* storage full */ }
+}
 
 function checkRateLimit(): boolean {
   const now = Date.now();
-  requestTimestamps = requestTimestamps.filter((t) => now - t < LIMITS.clientRateWindowMs);
-  if (requestTimestamps.length >= LIMITS.clientRateLimit) return false;
-  requestTimestamps.push(now);
+  const timestamps = loadTimestamps().filter((t) => now - t < LIMITS.clientRateWindowMs);
+  if (timestamps.length >= LIMITS.clientRateLimit) return false;
+  saveTimestamps([...timestamps, now]);
   return true;
 }
 
 function getRemainingRequests(): number {
   const now = Date.now();
-  requestTimestamps = requestTimestamps.filter((t) => now - t < LIMITS.clientRateWindowMs);
-  return LIMITS.clientRateLimit - requestTimestamps.length;
+  const timestamps = loadTimestamps().filter((t) => now - t < LIMITS.clientRateWindowMs);
+  return Math.max(0, LIMITS.clientRateLimit - timestamps.length);
 }
 
 export function ChatWindow({
@@ -59,6 +71,9 @@ export function ChatWindow({
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [shareMsg, setShareMsg] = useState<{ content: string; domainTag: DomainTag } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const streamingContentRef = useRef('');
+  const rafRef = useRef<number | null>(null);
+  const [, startTransition] = useTransition();
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -172,11 +187,24 @@ export function ChatWindow({
       if (!reader) throw new Error('No response stream available.');
 
       const decoder = new TextDecoder();
-      let assistantContent = '';
+      streamingContentRef.current = '';
       let responseDomain: DomainTag = 'growth';
       const assistantId = `msg-${Date.now()}-ai`;
 
-      setMessages([...newMessages, { role: 'assistant', content: '', domainTag: responseDomain, id: assistantId }]);
+      // Add placeholder — functional update avoids stale closure over newMessages
+      setMessages((prev) => [...prev, { role: 'assistant', content: '', domainTag: responseDomain, id: assistantId }]);
+
+      const flushStreamingContent = (domain: DomainTag, id: string) => {
+        const snapshot = streamingContentRef.current;
+        startTransition(() => {
+          setMessages((prev) => {
+            const last = prev[prev.length - 1];
+            if (!last || last.id !== id) return prev;
+            return [...prev.slice(0, -1), { ...last, content: snapshot, domainTag: domain }];
+          });
+        });
+        rafRef.current = null;
+      };
 
       while (true) {
         const { done, value } = await reader.read();
@@ -194,11 +222,11 @@ export function ChatWindow({
             if (parsed.type === 'domain') {
               responseDomain = parsed.tag;
             } else if (parsed.type === 'text') {
-              assistantContent += parsed.content;
-              setMessages([
-                ...newMessages,
-                { role: 'assistant', content: assistantContent, domainTag: responseDomain, id: assistantId },
-              ]);
+              streamingContentRef.current += parsed.content;
+              // Throttle renders via requestAnimationFrame — at most one setState per frame
+              if (!rafRef.current) {
+                rafRef.current = requestAnimationFrame(() => flushStreamingContent(responseDomain, assistantId));
+              }
             } else if (parsed.type === 'error') {
               throw new Error(parsed.content);
             }
@@ -212,10 +240,16 @@ export function ChatWindow({
         }
       }
 
-      setMessages([
-        ...newMessages,
-        { role: 'assistant', content: assistantContent, domainTag: responseDomain, id: assistantId },
-      ]);
+      // Cancel any pending RAF and do a final flush with complete content
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      setMessages((prev) => {
+        const last = prev[prev.length - 1];
+        if (!last || last.id !== assistantId) return prev;
+        return [...prev.slice(0, -1), { ...last, content: streamingContentRef.current, domainTag: responseDomain }];
+      });
     } catch (err) {
       const errMsg = err instanceof Error ? err.message : 'Unknown error';
       setError(errMsg);
@@ -254,8 +288,8 @@ export function ChatWindow({
             localStorage.setItem(STORAGE_KEYS.profile, JSON.stringify(profile));
           }
         }
-      } catch {
-        // Profile extraction is best-effort
+      } catch (err) {
+        console.warn('[TenX] Profile extraction failed:', err);
       }
     }
   }
@@ -344,13 +378,15 @@ export function ChatWindow({
 
       {/* Error bar */}
       {error && (
-        <div className="mx-3 sm:mx-4 mb-2 flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">
+        <div role="alert" className="mx-3 sm:mx-4 mb-2 flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">
+          <AlertTriangle className="w-3.5 h-3.5 text-red-400 flex-none" aria-hidden="true" />
           <p className="text-red-400 text-xs flex-1">{error}</p>
           <button
             onClick={retryLast}
+            aria-label="Retry last message"
             className="flex items-center gap-1 text-red-400 hover:text-red-300 text-xs font-medium"
           >
-            <RotateCcw className="w-3 h-3" /> Retry
+            <RotateCcw className="w-3 h-3" aria-hidden="true" /> Retry
           </button>
         </div>
       )}

@@ -6,6 +6,14 @@ export type Message = {
   content: string;
 };
 
+function classifyError(error: unknown): 'auth' | 'rate_limit' | 'invalid_request' | 'transient' {
+  const msg = (error instanceof Error ? error.message : String(error)).toLowerCase();
+  if (msg.includes('api key') || msg.includes('invalid key') || msg.includes('unauthorized') || msg.includes('403')) return 'auth';
+  if (msg.includes('rate limit') || msg.includes('quota') || msg.includes('429') || msg.includes('resource_exhausted')) return 'rate_limit';
+  if (msg.includes('invalid') || msg.includes('bad request') || msg.includes('400')) return 'invalid_request';
+  return 'transient';
+}
+
 export async function* streamLLM(
   systemPrompt: string,
   messages: Message[],
@@ -26,9 +34,17 @@ export async function* streamLLM(
     }
     return;
   } catch (error: unknown) {
+    const errType = classifyError(error);
     const errMsg = error instanceof Error ? error.message : String(error);
-    // Fall through to Groq on rate limit or other Gemini errors
-    console.warn('Gemini failed, falling back to Groq:', errMsg);
+
+    if (errType === 'auth') {
+      throw new Error(`Gemini API key is invalid or missing. Check GOOGLE_GEMINI_API_KEY in .env.local. (${errMsg})`);
+    }
+    if (errType === 'invalid_request') {
+      throw new Error(`Gemini rejected the request: ${errMsg}`);
+    }
+    // rate_limit and transient errors fall through to Groq
+    console.warn(`Gemini unavailable (${errType}), falling back to Groq:`, errMsg);
   }
 
   // Fallback: Groq (free tier: 30 req/min)
@@ -40,7 +56,12 @@ export async function* streamLLM(
       if (content) yield content;
     }
   } catch (error: unknown) {
+    const errType = classifyError(error);
     const errMsg = error instanceof Error ? error.message : String(error);
+
+    if (errType === 'auth') {
+      throw new Error(`Groq API key is invalid or missing. Check GROQ_API_KEY in .env.local. (${errMsg})`);
+    }
     throw new Error(`Both LLM providers failed. Groq error: ${errMsg}`);
   }
 }

@@ -30,7 +30,9 @@
           "tiers": [
             { "range": "10K-50K", "integration": [5000, 18000], "dedicated": [15000, 45000], "shorts": [2000, 7000] },
             { "range": "50K-200K", "integration": [18000, 60000], "dedicated": [45000, 150000], "shorts": [7000, 20000] },
-            { "range": "200K-500K", "integration": [60000, 180000], "dedicated": [150000, 400000], "shorts": [20000, 55000] }
+            { "range": "200K-500K", "integration": [60000, 180000], "dedicated": [150000, 400000], "shorts": [20000, 55000] },
+            { "range": "500K-1M", "integration": [180000, 450000], "dedicated": [400000, 1000000], "shorts": [55000, 150000] },
+            { "range": "1M+", "integration": [450000, null], "dedicated": [1000000, null], "shorts": [150000, null] }
           ]
         },
         "health": {
@@ -38,7 +40,9 @@
           "tiers": [
             { "range": "10K-50K", "integration": [4000, 12000], "dedicated": [12000, 35000], "shorts": [1500, 5000] },
             { "range": "50K-200K", "integration": [12000, 40000], "dedicated": [35000, 100000], "shorts": [5000, 15000] },
-            { "range": "200K-500K", "integration": [40000, 120000], "dedicated": [100000, 300000], "shorts": [15000, 45000] }
+            { "range": "200K-500K", "integration": [40000, 120000], "dedicated": [100000, 300000], "shorts": [15000, 45000] },
+            { "range": "500K-1M", "integration": [120000, 320000], "dedicated": [300000, 750000], "shorts": [45000, 120000] },
+            { "range": "1M+", "integration": [320000, null], "dedicated": [750000, null], "shorts": [120000, null] }
           ]
         },
         "food": {
@@ -46,7 +50,9 @@
           "tiers": [
             { "range": "10K-50K", "integration": [3000, 10000], "dedicated": [10000, 30000], "shorts": [1500, 5000] },
             { "range": "50K-200K", "integration": [10000, 35000], "dedicated": [30000, 90000], "shorts": [5000, 14000] },
-            { "range": "200K-500K", "integration": [35000, 100000], "dedicated": [90000, 250000], "shorts": [14000, 40000] }
+            { "range": "200K-500K", "integration": [35000, 100000], "dedicated": [90000, 250000], "shorts": [14000, 40000] },
+            { "range": "500K-1M", "integration": [100000, 280000], "dedicated": [250000, 650000], "shorts": [40000, 110000] },
+            { "range": "1M+", "integration": [280000, null], "dedicated": [650000, null], "shorts": [110000, null] }
           ]
         },
         "beauty": {
@@ -54,7 +60,9 @@
           "tiers": [
             { "range": "10K-50K", "integration": [4000, 15000], "dedicated": [12000, 40000], "shorts": [2000, 6000] },
             { "range": "50K-200K", "integration": [15000, 50000], "dedicated": [40000, 120000], "shorts": [6000, 18000] },
-            { "range": "200K-500K", "integration": [50000, 150000], "dedicated": [120000, 350000], "shorts": [18000, 50000] }
+            { "range": "200K-500K", "integration": [50000, 150000], "dedicated": [120000, 350000], "shorts": [18000, 50000] },
+            { "range": "500K-1M", "integration": [150000, 400000], "dedicated": [350000, 900000], "shorts": [50000, 130000] },
+            { "range": "1M+", "integration": [400000, null], "dedicated": [900000, null], "shorts": [130000, null] }
           ]
         },
         "motivation": {
@@ -62,7 +70,30 @@
           "tiers": [
             { "range": "10K-50K", "integration": [5000, 20000], "dedicated": [15000, 50000], "shorts": [2000, 8000] },
             { "range": "50K-200K", "integration": [20000, 70000], "dedicated": [50000, 175000], "shorts": [8000, 22000] },
-            { "range": "200K-500K", "integration": [70000, 200000], "dedicated": [175000, 450000], "shorts": [22000, 60000] }
+            { "range": "200K-500K", "integration": [70000, 200000], "dedicated": [175000, 450000], "shorts": [22000, 60000] },
+            { "range": "500K-1M", "integration": [200000, 500000], "dedicated": [450000, 1100000], "shorts": [60000, 165000] },
+            { "range": "1M+", "integration": [500000, null], "dedicated": [1100000, null], "shorts": [165000, null] }
+          ]
+        },
+        "gaming": {
+          "label": "Gaming",
+          "tiers": [
+            { "range": "10K-50K", "integration": [3000, 10000], "dedicated": [10000, 30000], "shorts": [1500, 5000] },
+            { "range": "50K-200K", "integration": [10000, 35000], "dedicated": [30000, 90000], "shorts": [5000, 14000] },
+            { "range": "200K-500K", "integration": [35000, 100000], "dedicated": [90000, 250000], "shorts": [14000, 40000] },
+            { "range": "500K-1M", "integration": [100000, 280000], "dedicated": [250000, 650000], "shorts": [40000, 110000] },
+            { "range": "1M+", "integration": [280000, null], "dedicated": [650000, null], "shorts": [110000, null] }
+          ]
+        },
+        "crypto": {
+          "label": "Crypto & Web3",
+          "note": "Verify brand's regulatory standing before accepting. Many exchanges are restricted in India. Check RBI guidelines and SEBI registration status.",
+          "tiers": [
+            { "range": "10K-50K", "integration": [8000, 25000], "dedicated": [20000, 60000], "shorts": [3000, 10000] },
+            { "range": "50K-200K", "integration": [25000, 80000], "dedicated": [60000, 200000], "shorts": [10000, 30000] },
+            { "range": "200K-500K", "integration": [80000, 220000], "dedicated": [200000, 550000], "shorts": [30000, 80000] },
+            { "range": "500K-1M", "integration": [220000, 550000], "dedicated": [550000, 1300000], "shorts": [80000, 200000] },
+            { "range": "1M+", "integration": [550000, null], "dedicated": [1300000, null], "shorts": [200000, null] }
           ]
         }
       }
@@ -85,7 +116,8 @@
         { "range": "10K-50K", "tweet": [2000, 8000], "thread": [5000, 15000], "space": [5000, 15000] },
         { "range": "50K-200K", "tweet": [8000, 25000], "thread": [15000, 50000], "space": [15000, 50000] },
         { "range": "200K-500K", "tweet": [25000, 80000], "thread": [50000, 150000], "space": [50000, 150000] },
-        { "range": "500K-1M", "tweet": [80000, 200000], "thread": [150000, 400000], "space": [150000, 400000] }
+        { "range": "500K-1M", "tweet": [80000, 200000], "thread": [150000, 400000], "space": [150000, 400000] },
+        { "range": "1M+", "tweet": [200000, null], "thread": [400000, null], "space": [400000, null] }
       ]
     },
     "linkedin": {
@@ -94,7 +126,8 @@
       "tiers": [
         { "range": "10K-50K", "post": [5000, 20000], "newsletter": [10000, 30000], "carousel": [8000, 25000] },
         { "range": "50K-200K", "post": [20000, 70000], "newsletter": [30000, 100000], "carousel": [25000, 80000] },
-        { "range": "200K+", "post": [70000, 200000], "newsletter": [100000, 300000], "carousel": [80000, 200000] }
+        { "range": "200K-500K", "post": [70000, 200000], "newsletter": [100000, 300000], "carousel": [80000, 200000] },
+        { "range": "500K+", "post": [200000, null], "newsletter": [300000, null], "carousel": [200000, null] }
       ]
     }
   },

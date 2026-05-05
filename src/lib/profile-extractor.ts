@@ -13,6 +13,11 @@ const niches = [
   'finance', 'fintech', 'technology', 'tech', 'gadgets', 'education', 'edtech',
   'health', 'fitness', 'food', 'cooking', 'beauty', 'fashion', 'motivation',
   'business', 'gaming', 'entertainment', 'travel', 'lifestyle',
+  'crypto', 'web3', 'blockchain', 'nft',
+  'astrology', 'spirituality', 'yoga', 'meditation',
+  'comedy', 'memes', 'vlogs', 'vlogging',
+  'parenting', 'kids', 'diy', 'crafts', 'art',
+  'music', 'dance', 'sports', 'fitness coaching',
 ];
 
 const falsePositiveNames = new Set([
@@ -78,12 +83,15 @@ export function extractProfileFromMessages(
   }
 
   // Extract subscriber/follower count → map to stage
-  const subMatch = allText.match(/(\d+[\.,]?\d*)\s*([km])?\s*(subscribers?|subs?|followers?)/i);
+  // Supports: 50k, 2m, 1.5 lakh, 3 crore
+  const subMatch = allText.match(/(\d+(?:[.,]\d+)?)\s*(k|m|lakh|lac|crore|cr)?\s*(subscribers?|subs?|followers?)/i);
   if (subMatch) {
     let count = parseFloat(subMatch[1].replace(',', ''));
     const multiplier = subMatch[2]?.toLowerCase();
     if (multiplier === 'k') count *= 1000;
-    else if (multiplier === 'm') count *= 1000000;
+    else if (multiplier === 'm') count *= 1_000_000;
+    else if (multiplier === 'lakh' || multiplier === 'lac') count *= 100_000;
+    else if (multiplier === 'crore' || multiplier === 'cr') count *= 10_000_000;
 
     if (count < 1000) updates.stage = 1;
     else if (count < 10000) updates.stage = 2;

@@ -185,6 +185,35 @@ Score X of 11. Flag every failed criterion with a specific fix.`,
     instruction: `Write a complete 5-block media pitch for the given query. Blocks: SUBJECT LINE (under 10 words, credential + topic), CREDENTIAL (25-40 words, name + quantified proof of expertise), ANSWER (40-70 words, direct answer first, one bolded quotable sentence, one stat max), PROOF (30-60 words, different stat or named example from Block 3), SIGN-OFF (name, title, channel URL, offer to promote the article). Total: 150-280 words. Apply the CARE checklist: Credibility, Accuracy, Relevance, Exclusivity.`,
   },
 
+  // ── GEO Optimize mode (from seo-content.ts) ──
+  'geo-optimize': {
+    label: 'GEO Optimize',
+    description: 'Rewrite existing content to earn AI search citations.',
+    instruction: `Optimize the given content for AI search citation using these steps in sequence:
+1. Rewrite the opening paragraph so the direct answer appears in the first 40 words
+2. Restructure each section into the 4-layer chunk format (direct answer → explanation → evidence → application)
+3. Add standalone definition blocks for every major concept
+4. Add or rewrite the FAQ section (5+ questions in natural search phrasing, 40-80 word answers)
+5. Flag every stat that lacks source attribution
+6. Add "Last updated: [date]" line
+7. Recommend which schema types to implement
+Output the full optimized version in markdown.`,
+  },
+
+  // ── Subject Lines mode (from email-strategy.ts) ──
+  'subject-lines': {
+    label: 'Subject Lines',
+    description: 'Generate 6 subject line + preview text options for an email topic.',
+    instruction: 'Generate 6 subject line options for the given email topic, one per pattern (stat-led, named mistake, curiosity question, specific result, named framework, direct utility). Each under 33 characters. Include a matching preview text (40-70 chars) for each. Flag the top 2 picks with reasoning.',
+  },
+
+  // ── Pitch Subject Lines mode (from media-pitch.ts) ──
+  'pitch-subject': {
+    label: 'Pitch Subject Lines',
+    description: 'Generate subject line options for a media pitch.',
+    instruction: 'Generate 5 subject line options for the given pitch topic, each under 10 words and leading with a specific credential (not the brand/channel name). Flag the top pick with reasoning.',
+  },
+
   // ── Repurposing mode (from growth.ts repurpose) ──
   'repurpose': {
     label: 'Repurpose Content',
