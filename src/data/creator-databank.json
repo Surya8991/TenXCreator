@@ -1,0 +1,134 @@
+{
+  "schema": {
+    "fields": ["claim", "source", "url", "year", "context", "quotable_version", "topic_tags"],
+    "instructions": "Add new entries when you have first-party channel data or verified platform/industry stats. Each entry feeds HARO pitches, brand deal negotiation, guest article proof sections, and advisor responses. Verify stats before using in client-facing content."
+  },
+  "entries": [
+    {
+      "claim": "YouTubers with a 5%+ CTR earn algorithmically up to 3x more impressions than channels with 2-3% CTR at the same subscriber count",
+      "source": "YouTube Creator Insider",
+      "url": "https://www.youtube.com/c/YouTubeCreatorInsider",
+      "year": "2024",
+      "context": "YouTube's internal creator education content on how CTR affects algorithmic distribution and impressions delivered",
+      "quotable_version": "According to YouTube Creator Insider, channels achieving 5%+ CTR receive algorithmically up to 3x more impressions than comparable channels stuck at 2-3% CTR — making thumbnail and title optimization a higher-leverage investment than upload frequency.",
+      "topic_tags": ["CTR", "YouTube algorithm", "thumbnails", "impressions", "growth"]
+    },
+    {
+      "claim": "Creators with 50K-500K YouTube subscribers in India charge ₹15,000-₹80,000 per sponsored integration depending on niche",
+      "source": "Influencer Marketing Hub India Creator Report",
+      "url": "https://influencermarketinghub.com",
+      "year": "2025",
+      "context": "Annual creator compensation benchmarks for the Indian market segmented by platform, subscriber tier, and niche category",
+      "quotable_version": "Influencer Marketing Hub's 2025 India Creator Report found that YouTube creators in the 50K-500K subscriber range charge ₹15,000-₹80,000 per integration, with tech and finance niches commanding the top end of the range.",
+      "topic_tags": ["brand deals", "rate card", "India", "YouTube", "sponsorship rates"]
+    },
+    {
+      "claim": "The global creator economy is valued at over $250 billion and is projected to reach $480 billion by 2027",
+      "source": "Goldman Sachs Creator Economy Report",
+      "url": "https://www.goldmansachs.com",
+      "year": "2023",
+      "context": "Goldman Sachs investment research report on the size, growth trajectory, and monetization potential of the creator economy globally",
+      "quotable_version": "Goldman Sachs' creator economy research valued the sector at over $250 billion and projected growth to $480 billion by 2027, driven by the shift from passive content consumption to creator-audience commerce relationships.",
+      "topic_tags": ["creator economy", "market size", "monetization", "growth projections"]
+    },
+    {
+      "claim": "YouTube channels that post consistently (at least 1 long-form video per week) grow subscribers 2x faster than channels posting less than once per week",
+      "source": "Vidiq Creator Intelligence Report",
+      "url": "https://vidiq.com",
+      "year": "2024",
+      "context": "Vidiq analysis of 100,000+ YouTube channels comparing upload frequency with subscriber growth velocity over 12-month periods",
+      "quotable_version": "Vidiq's 2024 analysis of 100,000+ YouTube channels found that consistent weekly uploaders grow subscribers at 2x the rate of channels posting less frequently — making upload cadence the single highest-leverage consistency habit.",
+      "topic_tags": ["YouTube growth", "upload frequency", "subscriber growth", "consistency"]
+    },
+    {
+      "claim": "Instagram Reels receive an average of 22% more interaction than standard video posts on the same account",
+      "source": "Hootsuite Social Media Trends Report",
+      "url": "https://hootsuite.com/research/social-trends",
+      "year": "2025",
+      "context": "Hootsuite's annual global benchmarks report comparing engagement across Instagram content formats based on analysis of 30,000+ business and creator accounts",
+      "quotable_version": "Hootsuite's 2025 Social Media Trends Report found that Instagram Reels generate 22% more interaction than standard video posts on the same accounts, reinforcing Reels as the primary organic reach format on the platform.",
+      "topic_tags": ["Instagram", "Reels", "engagement", "organic reach", "content format"]
+    },
+    {
+      "claim": "Only 4% of content creators earn above the minimum wage from their content alone",
+      "source": "Creator Economy Report by SignalFire",
+      "url": "https://signalfire.com/blog/creator-economy",
+      "year": "2023",
+      "context": "SignalFire venture research on income distribution across 50 million+ creators across YouTube, Instagram, TikTok, and other platforms",
+      "quotable_version": "SignalFire's creator economy research found that only 4% of creators earn above minimum wage from content alone — making diversified income streams (courses, brand deals, communities, consulting) essential rather than optional for creator businesses.",
+      "topic_tags": ["creator income", "monetization", "income streams", "creator economy"]
+    },
+    {
+      "claim": "Brand deals represent the #1 income source for 57% of full-time creators earning over $50K/year",
+      "source": "Kajabi Creator Report",
+      "url": "https://kajabi.com/blog/creator-report",
+      "year": "2024",
+      "context": "Kajabi annual survey of 10,000+ full-time creators on income composition, revenue streams, and business model patterns",
+      "quotable_version": "Kajabi's 2024 Creator Report found that brand deals are the primary income source for 57% of full-time creators earning above $50K annually — making negotiation skills and rate card accuracy among the highest-ROI business capabilities for creators.",
+      "topic_tags": ["brand deals", "creator income", "monetization", "sponsorships", "full-time creator"]
+    },
+    {
+      "claim": "YouTube AdSense RPM in India ranges from $0.50-$3 compared to $5-$25 in the US for the same niche",
+      "source": "YouTube Creator Academy + Noxinfluencer Data",
+      "url": "https://noxinfluencer.com",
+      "year": "2024",
+      "context": "Cross-geography RPM comparison data from creator analytics platforms and YouTube's own documentation on CPM variation by country",
+      "quotable_version": "Indian YouTube creators earn $0.50-$3 RPM versus $5-$25 for US creators in the same niche — a gap that makes brand deals and direct monetization (courses, communities) proportionally more important for Indian creators than AdSense alone.",
+      "topic_tags": ["RPM", "AdSense", "India", "monetization", "CPM", "geographic variation"]
+    },
+    {
+      "claim": "Email newsletters have an average open rate of 36-40% compared to organic social media reach of 5.2% on Facebook and 2-8% on Instagram",
+      "source": "Mailchimp Email Marketing Benchmarks + HubSpot State of Marketing",
+      "url": "https://mailchimp.com/resources/email-marketing-benchmarks",
+      "year": "2025",
+      "context": "Mailchimp benchmark data on email open rates by industry combined with HubSpot's organic social reach data from their annual State of Marketing report",
+      "quotable_version": "Email newsletters achieve 36-40% open rates according to Mailchimp's 2025 benchmarks, compared to 2-8% organic reach on Instagram — making an owned email list the highest-reliability distribution channel for creators who want to reach their audience without algorithm dependency.",
+      "topic_tags": ["email newsletter", "open rate", "owned audience", "organic reach", "distribution"]
+    },
+    {
+      "claim": "Creators who diversify into digital products (courses, templates, ebooks) earn 2.3x more annually than creators relying on brand deals and ad revenue alone",
+      "source": "Teachable Creator Earnings Report",
+      "url": "https://teachable.com/blog/creator-economy",
+      "year": "2024",
+      "context": "Teachable platform data on income composition and total annual earnings comparison between creators with and without digital product revenue streams",
+      "quotable_version": "Teachable's 2024 Creator Earnings Report found that creators with digital product revenue streams (courses, templates, ebooks) earn 2.3x more annually than those relying solely on brand deals and platform ad revenue.",
+      "topic_tags": ["digital products", "courses", "income diversification", "creator income", "monetization"]
+    },
+    {
+      "claim": "TikTok's Creator Rewards Program pays $0.40-$1.00 per 1,000 views for eligible content, compared to YouTube's $1-$3 RPM for the same audience size",
+      "source": "TikTok Creator Marketplace + Influencer Marketing Hub TikTok Report",
+      "url": "https://influencermarketinghub.com/tiktok-money-calculator",
+      "year": "2025",
+      "context": "Platform payout rate comparison data from Influencer Marketing Hub's annual TikTok monetization benchmarks and creator interviews",
+      "quotable_version": "TikTok's Creator Rewards Program pays $0.40-$1.00 per 1,000 views according to 2025 Influencer Marketing Hub benchmarks — lower than YouTube's $1-$3 RPM — which is why most TikTok creators treat the platform as a discovery and top-of-funnel channel rather than a primary revenue source.",
+      "topic_tags": ["TikTok", "Creator Rewards Program", "RPM", "platform monetization", "payout rates"]
+    },
+    {
+      "claim": "Creators who post a mix of short-form and long-form content on YouTube grow 40% faster than single-format channels",
+      "source": "Vidiq 2024 YouTube Creator Trends Report",
+      "url": "https://vidiq.com/blog/post/youtube-trends",
+      "year": "2024",
+      "context": "Vidiq analysis of YouTube channels across niches comparing growth velocity of channels using YouTube Shorts alongside long-form versus those publishing only one format",
+      "quotable_version": "Vidiq's 2024 YouTube Creator Trends Report found that channels mixing short-form (Shorts) with long-form content grow 40% faster than single-format channels — making a hybrid content strategy the highest-leverage architectural decision for growing YouTube channels.",
+      "topic_tags": ["YouTube Shorts", "content mix", "long-form", "short-form", "growth strategy"]
+    },
+    {
+      "claim": "[PLACEHOLDER: First-party channel data on CTR improvement after thumbnail A/B testing]",
+      "source": "Creator's Own Channel Analytics",
+      "url": "",
+      "year": "2026",
+      "context": "[TO BE FILLED: Record actual before/after CTR data from thumbnail A/B tests on your channel. Replace with verified figures before use in pitches or brand decks.]",
+      "quotable_version": "[PLACEHOLDER: After A/B testing thumbnails across [N] videos, [Channel Name] increased average CTR from [X]% to [Y]% within [timeframe], resulting in [Z]% more impressions from the same upload schedule.]",
+      "topic_tags": ["CTR", "thumbnail testing", "first-party data", "YouTube", "placeholder"]
+    },
+    {
+      "claim": "[PLACEHOLDER: First-party engagement rate data after implementing posting schedule optimization]",
+      "source": "Creator's Own Channel Analytics",
+      "url": "",
+      "year": "2026",
+      "context": "[TO BE FILLED: Record actual engagement rate before/after implementing consistent posting schedule. Replace with verified figures before use in pitches or brand decks.]",
+      "quotable_version": "[PLACEHOLDER: After committing to a consistent [X]-per-week schedule for [N] weeks, [Channel Name] saw engagement rate increase from [A]% to [B]%, with [metric] improving by [Z]%.]",
+      "topic_tags": ["engagement rate", "posting schedule", "first-party data", "consistency", "placeholder"]
+    }
+  ]
+}

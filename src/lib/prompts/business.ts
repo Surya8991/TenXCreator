@@ -65,6 +65,27 @@ export const BUSINESS_MODES = {
   'tax-plan': 'Complete tax planning strategy including deductions, advance tax schedule, optimal business structure, handling multi-platform income.',
   'money-audit': 'Review every income stream across all platforms the creator has and identify the highest-opportunity stream they\'re missing.',
   'pipeline': 'Build a 90-day sponsorship pipeline: 20 target brands, weekly outreach schedule, follow-up sequence, tracking system. Include multi-platform bundle pricing.',
+  'case-study': `Write or structure a creator case study using the BAB-Plus framework (Before-After-Bridge + Metrics). The reader is asking: "Did this work for a creator like me?" Every structural decision must make that answer fast and clear. The creator is the hero — the tool/strategy is the enabler.
+
+FULL CASE STUDY (700-1,000 words, 6 sections):
+SECTION 1 — CREATOR CONTEXT (100-150 words): Describe the creator's situation — niche, platform, approximate size, and the business goal driving the engagement. Do not open with "Creator X is a leading..." — start with their situation.
+SECTION 2 — THE CHALLENGE (100-150 words): Name the specific problem with numbers. "CTR had dropped to 2.1%" is a challenge. "Growth was slow" is not. End with one sentence on what was at stake if nothing changed.
+SECTION 3 — THE APPROACH (150-200 words): What strategy or methodology was applied. Name the framework used. Include timeline and what made this different from a generic fix.
+SECTION 4 — THE RESULTS (100-150 words): 3-5 specific before/after metrics with timeframes. Format: "[Metric]: [Before value] → [After value] ([timeframe])". Never bury metrics in paragraphs — use a callout list.
+SECTION 5 — CREATOR VOICE (1-2 quotes): Direct quote from the creator. Full name, channel/platform. Authentic voice is more credible than polished language.
+SECTION 6 — CTA (1 sentence + 1 URL): One link. Frame as an action to get a similar outcome, not a generic invitation to browse.
+
+METRICS RULES:
+- Every case study must contain at least one before/after metric with a timeframe
+- Percentage changes must include absolute values: "increased from 2.1% to 6.4%" not "tripled"
+- Timeframes must be named: "within 60 days" not "after implementation"
+- Anonymous cases are acceptable. Metrics-free cases are not.
+
+DISTRIBUTION SEQUENCE (note in output):
+Day 0: Publish + LinkedIn narrative post (situation/challenge/outcome, 200-250 words)
+Day 2: Extract 3 metrics for LinkedIn carousel
+Day 5-7: Newsletter feature — 150-word summary with 3 key metrics + link
+Day 14: Add data points to creator data bank for future pitches`,
 } as const;
 
 export type BusinessMode = keyof typeof BUSINESS_MODES;

@@ -83,7 +83,31 @@ COMMUNITY PSYCHOLOGY:
 - Indian audiences: respond to mentor/elder sibling dynamic, regional language = deeper loyalty
 - Community members buy based on peer recommendation more than creator recommendation
 
-You have access to benchmarks, tool recommendations, and analytics data via RAG context.`;
+You have access to benchmarks, tool recommendations, and analytics data via RAG context.
+
+SEO & CONTENT STRATEGY BENCHMARKS (use these exact numbers when advising):
+
+SEO GROWTH TARGETS:
+- Target: 25% quarter-over-quarter increase in non-branded organic sessions
+- Target: top-3 ranking for at least 10 primary cluster keywords within 6 months of executing full content cluster strategy
+- Pillar + spoke cluster structure: 1 pillar page (2,500-4,000 words) + 5-10 spoke pages (800-1,500 words) per cluster
+- Optimal content build cadence: 2-3 pillar pages/month + 4-6 spoke pages/month during first 6 months
+- Refresh at least one existing pillar page per month after first 6 months (updates are faster ROI than new content)
+- EEAT signals required on all content: named author with credentials + original data + verifiable experience
+
+CONTENT REPURPOSING BENCHMARKS:
+- Each primary asset should generate 8+ derivative pieces across 3+ channels within 7 days of publication
+- Long-form article → 9-12 derivatives in 3-4 additional hours
+- Webinar/recording → 12-18 derivatives in 6-7 hours
+- Case study → 5-7 derivatives in 3 hours
+- Original research report → 20-35 derivatives over 4-6 weeks
+- Repurposing reduces content production costs 60-80% vs creating net-new content per channel
+- Reshare top-performing content at 6 weeks and 12 weeks — 80%+ of audience did not see it the first time
+
+PROGRAMMATIC SEO GUARDRAILS:
+- Only build programmatic pages where underlying data varies meaningfully across variables
+- Launch programmatic batches in groups of 20-30 pages, not all at once; monitor indexation rate before scaling
+- All programmatic pages need: unique meta, human-written intro, genuinely variable body content, expert review of sample pages`;
 
 export const OPERATIONS_MODES = {
   'data-crisis': 'Emergency diagnostic when numbers have dropped on any platform. Identify most likely cause from data pattern, rule out alternatives, prescribe first 3 actions.',
