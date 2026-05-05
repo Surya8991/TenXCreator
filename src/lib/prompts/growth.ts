@@ -71,15 +71,119 @@ INDIA-SPECIFIC:
 - Instagram Reels reach in India is exceptionally high due to Jio-era mobile-first users
 - LinkedIn India is booming for B2B and professional creators
 
-You have access to current data about rate cards, benchmarks, and tools via RAG context. Use it when relevant.`;
+You have access to current data about rate cards, benchmarks, and tools via RAG context. Use it when relevant.
+
+PLATFORM STRATEGY BENCHMARKS (use these exact numbers when advising):
+
+YOUTUBE:
+- Target: 50%+ average view duration (AVD) on long-form = excellent
+- Target: 6%+ CTR on thumbnails for consistent algorithm growth
+- CTR below 4% = thumbnail or title is broken, regardless of content quality
+- 30-second retention threshold: if viewer is not committed by 0:30, algorithm suppresses the video
+- Minimum viable cadence: 1 long-form/week (below this, algorithm treats channel as inactive)
+- Optimal full cadence: 3-5 Shorts/week + 1 long-form/week + 2 case study videos/month
+- Shorts cross-posted to LinkedIn earn 1.45x reach multiplier
+- Test two thumbnail variations per video; switch to the higher CTR version after 500 impressions
+
+LINKEDIN:
+- Target: 5,000+ impressions per post, 4%+ engagement rate (comments + reactions + reposts / impressions)
+- Carousels (PDFs): 1.45x organic reach multiplier vs text posts
+- Polls: 1.64x reach multiplier (but low depth engagement — use sparingly)
+- No external links in post body — reduces reach by ~30%; put links in first comment
+- Optimal post time: Tuesday-Thursday, 7-9am in audience's timezone
+- Optimal cadence: 3-5 posts/week; below 3 = algorithm treats account as inactive
+- First-hour engagement determines total reach — reply to every comment within 60 minutes of posting
+- Optimal post length: 800-1,000 characters for text posts
+
+EMAIL NEWSLETTER:
+- Target: 35%+ open rate, 3%+ click rate, 10% subscriber-to-lead conversion within 90 days
+- 4:1 value-to-conversion ratio (4 value emails for every 1 commercial ask)
+- Subject line maximum: 33 characters (mobile truncation limit)
+- Optimal send: Tuesday or Wednesday, 7-9am recipient local time
+- Segmented sends produce 3-5x higher click rates than unsegmented sends
+- Minimum viable cadence: biweekly; monthly is too infrequent to build list loyalty
+
+CONTENT REPURPOSING:
+- Each primary content asset should generate 8+ derivative pieces across 3+ channels within 7 days
+- Long-form article → 9-12 derivatives in 3-4 hours of additional work
+- Webinar → 12-18 derivatives in 6-7 hours
+- Repurposing reduces content production costs 60-80% vs creating net-new content per channel
+
+HARO / MEDIA PITCHING:
+- Target: 15%+ pitch pickup rate (industry average: 10%; top operators reach 20%)
+- Respond within 30-60 minutes of query alert — response rate drops sharply after 4 hours
+- Optimal pitch length: 150-280 words; over 300 reads like a sales proposal
+- Aim for 3-5 qualified query responses per week (volume without relevance tanks pickup rate)`;
 
 export const GROWTH_MODES = {
-  'hook-lab': 'Generate 5 different hook options for the given content topic, each using a different viral psychology mechanism. Specify which platform each hook is optimized for. Rank by predicted viral potential with reasoning.',
+  'hook-lab': `Generate 5 different hook options for the given content topic, each using a different viral psychology mechanism. Specify which platform each hook is optimized for. Rank by predicted viral potential with reasoning.
+
+For YouTube hooks apply the RETENTION STRUCTURE:
+- The 30-second threshold is critical: if the viewer is not committed by 0:30, the algorithm suppresses the video.
+- Hook formula: State the specific OUTCOME or FINDING in the first 3-5 seconds. Never open with "Hey everyone, welcome back..."
+- Short (60-90s): Open with the single most surprising or specific claim. No self-intro. No "in this video."
+- How-to/Framework (8-15 min): State the exact deliverable the viewer gets by watching. "By the end of this video, you'll have [specific framework/result]."
+- Case Study (10-20 min): Lead with the specific outcome in numbers. "A [creator type] went from [before] to [after] in [timeframe]. Here's how."
+
+For each hook also output:
+THUMBNAIL COPY (3-5 words): [text]
+THUMBNAIL VISUAL: [what to show]
+3 TITLE OPTIONS: Search-intent (keyword-first) / Algorithm-discovery (problem-first) / Hybrid (keyword + curiosity)`,
+
+  'video-script': `Write a full video script for the given topic and format. Apply the YouTube retention structure:
+
+SHORT (60-90 sec): Hook (0-3s counterintuitive claim) → Context + Tension (3-30s) → The One Idea (30-75s) → Single CTA (75-90s). Word count: 130-150 words per 60s.
+
+HOW-TO/FRAMEWORK (8-15 min): Hook promise (0-0:30) → Context/who this is for (0:30-1:30) → 3-5 named steps (1:30-10:00+) → Proof before minute 10 → Single CTA.
+
+CASE STUDY (10-20 min): Hook with specific outcome numbers (0-0:30) → Client context (0:30-2:00) → The Challenge with before-metrics (2:00-5:00) → The Approach step-by-step (5:00-13:00) → Results with before/after/timeframe per metric (13:00-16:00) → Transferable lesson (16:00-18:00) → Single CTA.
+
+Rules: Primary takeaway stated within first 10 min and repeated twice more. One CTA only. Every stat names source and year. Include [VISUAL:], [TEXT:], [B-ROLL:] direction notes throughout. End with thumbnail creative direction and 3 title options.
+
+Spoken word reference: 60s=130-150w, 8min=1,040-1,200w, 12min=1,560-1,800w, 15min=1,950-2,250w`,
+
   'quick-win': 'Give the single most impactful action the creator can take in the next 24 hours on their primary platform, requiring no budget, with a measurable outcome.',
   'content-calendar': 'Build a 30-day cross-platform content calendar with topics, titles, posting times, platform-specific formats, SEO keywords, and a sustainability check.',
   'niche-down': 'Identify the 3 most promising sub-niches within the creator\'s current broad niche, with search volume context across YouTube + Instagram + TikTok and honest assessment of fit.',
   'collab-finder': 'Identify 10 strategically valuable collaboration partners across platforms to approach in the next 90 days with value propositions and outreach messages.',
   'platform-audit': 'Analyze which platforms the creator should prioritize based on their niche, stage, and goals. Recommend cutting platforms that aren\'t worth the time.',
+
+  'repurpose': `Map out the full repurposing production plan for the given source content. Apply the REMIX rule: do not copy-paste across platforms — every derivative must be rebuilt for its channel's native format, reader state, and engagement mechanics.
+
+SOURCE TYPES AND DERIVATIVE COUNTS:
+- Long-form article → 9-12 derivatives
+- Webinar/recording → 12-18 derivatives
+- Case study → 5-7 derivatives
+- Original research report → 20-35 derivatives over 4-6 weeks
+
+DERIVATIVES FOR A LONG-FORM ARTICLE OR VIDEO:
+1. LinkedIn Narrative Post (800-1,000 chars): Hook-Tension-Peak-CTC structure. URL in first comment, never in post body.
+2. LinkedIn Carousel (5-7 slides): Each slide one point + one sentence. Slide 1 = headline claim. Last slide = CTA.
+3. Twitter/X Thread (5-8 tweets): Tweet 1 = most counterintuitive claim. Tweets 2-6 = one insight + stat each. Tweet 7 = application. Tweet 8 = CTA + link.
+4. Short-form Video Script (60-90 sec): Extract the single most surprising finding. Hook in first 3 seconds. Full standalone value — not a teaser.
+5. Email Newsletter Feature (150-250 words): Primary insight + one supporting stat. One CTA to the source. Never summarize the full piece.
+6. YouTube Long-form Brief: If evergreen with search volume — angle, hook sentence, 3-5 section outline, CTA.
+7. Creator Data Bank Entry: Extract 1-3 specific quotable stats. Format: Claim / Source / Context / Quotable Version.
+8. FAQ/GEO Block: 3-5 questions the content implicitly answers, rewritten as explicit FAQ entries (40-80 words each).
+9. Guest Article Pitch Angle: Most original/data-backed claim as the basis for a pitch to a relevant publication.
+
+PRODUCTION SEQUENCE BY DAY:
+Day 0: LinkedIn narrative post + source published
+Day 1-2: Short-form video clip
+Day 2-3: LinkedIn carousel
+Day 3-5: Twitter/X thread
+Week 1: Newsletter feature + add data points to creator data bank
+Week 2: FAQ GEO block + YouTube long-form brief
+Week 3-4: Guest article pitch using core claim
+
+CHANNEL CONSTRAINTS:
+LinkedIn post body: 800-1,000 chars, no external URL in body, CTC question at end
+Twitter/X: each tweet self-contained, under 280 chars
+YouTube Shorts: full value in 90 seconds, no teaser
+Email: URL allowed in body, one CTA only, 150-250 words for feature section
+HARO pitch: 150-280 words, 5-block structure
+
+Output the full derivative map labeled by number, or a single derivative if a specific one is requested.`,
 } as const;
 
 export type GrowthMode = keyof typeof GROWTH_MODES;
