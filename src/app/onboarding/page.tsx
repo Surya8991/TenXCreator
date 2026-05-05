@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ArrowRight, Sparkles, ArrowLeft } from 'lucide-react';
 import { STORAGE_KEYS } from '@/lib/constants';
+import { ErrorBoundary } from '@/components/shared/ErrorBoundary';
 
 const platforms = [
   { key: 'youtube', label: 'YouTube', icon: '▶' },
@@ -60,7 +61,7 @@ const popularCountries = [
 
 const TOTAL_STEPS = 4;
 
-export default function OnboardingPage() {
+function OnboardingPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
@@ -269,5 +270,13 @@ export default function OnboardingPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function OnboardingPageWithBoundary() {
+  return (
+    <ErrorBoundary>
+      <OnboardingPage />
+    </ErrorBoundary>
   );
 }

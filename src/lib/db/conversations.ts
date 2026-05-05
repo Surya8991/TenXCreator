@@ -1,4 +1,9 @@
-// TODO: Wire to UI when Supabase auth is active. Currently app uses localStorage.
+/**
+ * Supabase-backed conversation persistence.
+ * Not active — app uses localStorage (src/components/chat/ChatWindow.tsx).
+ * Enable by: configuring Supabase env vars, completing AuthContext, and
+ * importing these functions in ChatWindow in place of the localStorage writes.
+ */
 import { supabase } from './supabase';
 import type { AdvisorType } from '../router';
 

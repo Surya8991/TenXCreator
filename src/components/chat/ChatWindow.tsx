@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback, useTransition } from 'react';
-import { Send, RotateCcw, Share2, Copy, Check } from 'lucide-react';
+import { Send, RotateCcw, Share2, Copy, Check, AlertTriangle } from 'lucide-react';
 import { MessageBubble } from './MessageBubble';
 import { ModeSelector } from './ModeSelector';
 import { ShareCard } from './ShareCard';
@@ -25,21 +25,33 @@ type CreatorContext = {
   country?: string;
 };
 
-// Rate limit tracker — module-level is intentional (single ChatWindow instance per page)
-let requestTimestamps: number[] = [];
+const RATE_LS_KEY = 'tenx-rate-timestamps';
+
+function loadTimestamps(): number[] {
+  try {
+    const raw = localStorage.getItem(RATE_LS_KEY);
+    return raw ? (JSON.parse(raw) as number[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveTimestamps(ts: number[]): void {
+  try { localStorage.setItem(RATE_LS_KEY, JSON.stringify(ts)); } catch { /* storage full */ }
+}
 
 function checkRateLimit(): boolean {
   const now = Date.now();
-  requestTimestamps = requestTimestamps.filter((t) => now - t < LIMITS.clientRateWindowMs);
-  if (requestTimestamps.length >= LIMITS.clientRateLimit) return false;
-  requestTimestamps.push(now);
+  const timestamps = loadTimestamps().filter((t) => now - t < LIMITS.clientRateWindowMs);
+  if (timestamps.length >= LIMITS.clientRateLimit) return false;
+  saveTimestamps([...timestamps, now]);
   return true;
 }
 
 function getRemainingRequests(): number {
   const now = Date.now();
-  requestTimestamps = requestTimestamps.filter((t) => now - t < LIMITS.clientRateWindowMs);
-  return LIMITS.clientRateLimit - requestTimestamps.length;
+  const timestamps = loadTimestamps().filter((t) => now - t < LIMITS.clientRateWindowMs);
+  return Math.max(0, LIMITS.clientRateLimit - timestamps.length);
 }
 
 export function ChatWindow({
@@ -276,8 +288,8 @@ export function ChatWindow({
             localStorage.setItem(STORAGE_KEYS.profile, JSON.stringify(profile));
           }
         }
-      } catch {
-        // Profile extraction is best-effort
+      } catch (err) {
+        console.warn('[TenX] Profile extraction failed:', err);
       }
     }
   }
@@ -366,13 +378,15 @@ export function ChatWindow({
 
       {/* Error bar */}
       {error && (
-        <div className="mx-3 sm:mx-4 mb-2 flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">
+        <div role="alert" className="mx-3 sm:mx-4 mb-2 flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">
+          <AlertTriangle className="w-3.5 h-3.5 text-red-400 flex-none" aria-hidden="true" />
           <p className="text-red-400 text-xs flex-1">{error}</p>
           <button
             onClick={retryLast}
+            aria-label="Retry last message"
             className="flex items-center gap-1 text-red-400 hover:text-red-300 text-xs font-medium"
           >
-            <RotateCcw className="w-3 h-3" /> Retry
+            <RotateCcw className="w-3 h-3" aria-hidden="true" /> Retry
           </button>
         </div>
       )}
