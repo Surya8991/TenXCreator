@@ -16,11 +16,13 @@ AI-powered business advisor built for content creators. Get real-time, actionabl
 
 - **Three AI Advisors** — Growth (content & SEO), Business (deals & taxes), Operations (analytics & tech) — auto-routed based on your question
 - **20 Quick Modes** — Hook Lab, Video Script, Deal Review, Rate Card, Data Crisis, Contract Review, Case Study, Weekly Review, Content Calendar, Quick Win, Website Advisor, Newsletter, Nurture Sequence, Pillar Page, Spoke Article, Decision Article, GEO Audit, SEO Content, Media Pitch, Repurpose Content
-- **Real Rate Cards** — Platform-specific rates by niche, tier, and country (not guesses)
-- **Tax Intelligence** — GST, TDS, income tax slabs, advance tax deadlines for India + global rules
-- **Progressive Profiling** — Learns your niche, stage, country, and platforms from conversation
+- **Real Rate Cards** — 11 niches × 5 tiers in INR and USD (finance, tech, education, health, beauty, food, gaming, lifestyle, crypto, travel, business) across India and global markets
+- **Tax Intelligence** — GST, TDS (brand deals 194R, affiliate 194H, course sales, contractor 194J), income tax slabs + 87A rebate, advance tax, penalty rules (234B/C/F), 17 allowable expense categories, business structure guide (Sole Prop → OPC → LLP → Pvt Ltd)
+- **Platform Benchmarks** — YouTube, Instagram, TikTok, LinkedIn, podcast, and newsletter KPIs with exact numbers by platform
+- **Guided Onboarding** — 4-step setup (platforms → niche → country → stage) pre-populates your profile for immediate specific advice
+- **Progressive Profiling** — Continues learning from conversation; supports lakh/crore notation; 20+ niche categories
 - **Human Writing Standards** — Every response enforces active voice, sourced statistics, and zero AI filler phrases
-- **Creator DataBank** — Cited stats library for brand deals, pitches, and content (mirrors HARO pitch-ready format)
+- **Creator DataBank** — Cited creator economy stats wired into RAG — cited automatically in relevant responses for brand deals, pitches, and content
 - **Multi-LLM** — Gemini 2.0 Flash (primary) with Groq Llama 3.3 auto-fallback
 - **Works Without a Backend** — Fully functional with localStorage; Supabase optional
 - **Voice Input** — Speech-to-text for hands-free interaction
@@ -69,7 +71,7 @@ src/
   app/
     page.tsx              # Landing page
     chat/                 # Chat interface with conversation sidebar
-    onboarding/           # Platform selection
+    onboarding/           # 4-step setup: platforms → niche → country → stage
     dashboard/            # Profile & quick actions
     blog/                 # Blog listing & posts
     pricing/              # Free vs Pro plans
@@ -92,18 +94,25 @@ src/
       email-strategy.ts   # Newsletter 8-block structure, 5-email nurture sequence
       seo-content.ts      # GEO/AEO framework for AI search citation (Google AIO, Perplexity, ChatGPT)
       media-pitch.ts      # HARO/Featured 5-block pitch structure, CARE checklist
-    rag/                  # RAG search (rate cards, tax rules, benchmarks)
+    rag/
+      search.ts           # RAG context builder — structured text formatters, DataBank tag matching
     db/                   # Supabase client, auth, conversations, creators
     router.ts             # Smart advisor routing + domain-specific prompt injection
-    profile-extractor.ts  # Extract niche/stage/country from messages
+    profile-extractor.ts  # Extract niche/stage/country/lakh-crore counts from messages
     constants.ts          # Storage keys, creator stages, limits
   data/
     countries.json        # 20+ countries with tax/CPM data
-    rate-cards/           # India (INR) + Global (USD) rates by niche & tier
-    tax-rules/            # GST, income tax, TDS rules
-    benchmarks/           # YouTube CTR, AVD, engagement benchmarks
-    tools/                # Creator tools & website platforms
-    creator-databank.json # Cited creator economy stats for pitches, deals, and content
+    rate-cards/
+      india.json          # INR rates: 9 niches × 5 tiers (YouTube, Instagram, LinkedIn, X) incl. gaming & crypto
+      global.json         # USD rates: 11 niches × 5 tiers + CPM by geography (6 countries)
+    tax-rules/
+      india.json          # GST, income tax slabs, TDS (194R/H/C/J/I), penalty rules, 17 expense categories, 4 business structures
+    benchmarks/
+      youtube.json        # All-platform benchmarks: YouTube, Instagram, TikTok, LinkedIn, podcast, newsletter + creator stages
+    tools/
+      creator-tools.json  # 14 tool categories: scriptwriting, editing, email, scheduling, analytics, payments, community, brand platforms
+      website-platforms.json  # CMS & hosting platforms by stage and goal
+    creator-databank.json # 14+ cited creator economy stats — auto-injected by RAG when topic tags match
 supabase/
   migrations/             # SQL migrations (creators, conversations, metrics)
 ```
@@ -112,9 +121,9 @@ supabase/
 
 | Advisor | Domain | Examples |
 |---------|--------|----------|
-| Growth | Content strategy, SEO, viral hooks, thumbnails, video scripts, repurposing, email, media pitching | "How do I improve my CTR?", "Write me hooks for a finance video", "Build my repurposing plan for this article" |
-| Business | Brand deals, rate cards, contracts, tax, negotiation, case studies | "What should I charge for a YouTube integration?", "Review this brand deal", "Write a case study from these results" |
-| Operations | Analytics, community, tech stack, AI tools, SEO benchmarks | "My views dropped 40%, what happened?", "Audit my content for AI search citation", "Best editing tools for beginners?" |
+| Growth | Content strategy, SEO, viral hooks, thumbnails, video scripts, repurposing, email, media pitching — all platforms | "How do I improve my CTR?", "Write me hooks for a finance video", "Build my repurposing plan for this article" |
+| Business | Brand deals (11 niches × 5 tiers), rate cards, contracts, tax (GST/TDS/income), negotiation, business structures, case studies | "What should I charge for a YouTube integration at 50K subs?", "Review this brand deal", "How do I register as OPC vs Pvt Ltd?" |
+| Operations | Analytics benchmarks (YouTube/Instagram/TikTok/LinkedIn/podcast/newsletter), community platforms, 14 tool categories, AI stack | "My views dropped 40%, what happened?", "Audit my content for AI search citation", "Best email marketing tool for a creator?" |
 
 The system auto-routes your question to the right advisor based on keywords. No manual switching needed.
 
@@ -171,6 +180,17 @@ The system auto-routes your question to the right advisor based on keywords. No 
 | 5 | 1M+ | Operator |
 
 Rate cards, advice, and benchmarks are tailored to your stage.
+
+## Data Coverage
+
+| Dataset | What's Inside |
+|---------|--------------|
+| India Rate Cards | 9 niches (finance, tech, education, health, food, beauty, gaming, motivation, crypto) × 5 tiers — YouTube (integration + dedicated + Shorts), Instagram (Reel/Story/Carousel/Static), LinkedIn, X |
+| Global Rate Cards | 11 niches × 5 tiers in USD + CPM by geography for 5–6 countries per niche |
+| India Tax Rules | GST (18%, zero-rated exports, ITC), income tax slabs 2026 + 87A rebate + surcharge, TDS types (194R brand deals, 194H affiliate, 194C/J courses, 194I rent), penalty rules (234B/C/F, 271), 17 allowable expenses, 4 business structures with compliance notes |
+| Platform Benchmarks | YouTube (CTR/AVD/upload cadence/RPM by country), Instagram (engagement/Reels/Stories/carousels), TikTok (completion/FYP%), LinkedIn (impressions/engagement/format multipliers), Podcast (downloads), Newsletter (open/click rates) |
+| Creator Tools | 14 categories: scriptwriting, video editing, thumbnails, SEO, short-form repurposing, audio, email marketing, scheduling, analytics, courses/memberships, payments, automation, community, Indian & global brand deal platforms |
+| Creator DataBank | 14+ cited stats auto-matched to query by topic tags — YouTube CTR algorithmics, India brand deal rates, creator economy size, upload frequency data, income distribution, email vs social reach |
 
 ## Rate Limiting
 
