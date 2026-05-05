@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useTransition } from 'react';
 import { Send, RotateCcw, Share2, Copy, Check } from 'lucide-react';
 import { MessageBubble } from './MessageBubble';
 import { ModeSelector } from './ModeSelector';
@@ -59,6 +59,9 @@ export function ChatWindow({
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [shareMsg, setShareMsg] = useState<{ content: string; domainTag: DomainTag } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const streamingContentRef = useRef('');
+  const rafRef = useRef<number | null>(null);
+  const [, startTransition] = useTransition();
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -172,11 +175,24 @@ export function ChatWindow({
       if (!reader) throw new Error('No response stream available.');
 
       const decoder = new TextDecoder();
-      let assistantContent = '';
+      streamingContentRef.current = '';
       let responseDomain: DomainTag = 'growth';
       const assistantId = `msg-${Date.now()}-ai`;
 
-      setMessages([...newMessages, { role: 'assistant', content: '', domainTag: responseDomain, id: assistantId }]);
+      // Add placeholder — functional update avoids stale closure over newMessages
+      setMessages((prev) => [...prev, { role: 'assistant', content: '', domainTag: responseDomain, id: assistantId }]);
+
+      const flushStreamingContent = (domain: DomainTag, id: string) => {
+        const snapshot = streamingContentRef.current;
+        startTransition(() => {
+          setMessages((prev) => {
+            const last = prev[prev.length - 1];
+            if (!last || last.id !== id) return prev;
+            return [...prev.slice(0, -1), { ...last, content: snapshot, domainTag: domain }];
+          });
+        });
+        rafRef.current = null;
+      };
 
       while (true) {
         const { done, value } = await reader.read();
@@ -194,11 +210,11 @@ export function ChatWindow({
             if (parsed.type === 'domain') {
               responseDomain = parsed.tag;
             } else if (parsed.type === 'text') {
-              assistantContent += parsed.content;
-              setMessages([
-                ...newMessages,
-                { role: 'assistant', content: assistantContent, domainTag: responseDomain, id: assistantId },
-              ]);
+              streamingContentRef.current += parsed.content;
+              // Throttle renders via requestAnimationFrame — at most one setState per frame
+              if (!rafRef.current) {
+                rafRef.current = requestAnimationFrame(() => flushStreamingContent(responseDomain, assistantId));
+              }
             } else if (parsed.type === 'error') {
               throw new Error(parsed.content);
             }
@@ -212,10 +228,16 @@ export function ChatWindow({
         }
       }
 
-      setMessages([
-        ...newMessages,
-        { role: 'assistant', content: assistantContent, domainTag: responseDomain, id: assistantId },
-      ]);
+      // Cancel any pending RAF and do a final flush with complete content
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      setMessages((prev) => {
+        const last = prev[prev.length - 1];
+        if (!last || last.id !== assistantId) return prev;
+        return [...prev.slice(0, -1), { ...last, content: streamingContentRef.current, domainTag: responseDomain }];
+      });
     } catch (err) {
       const errMsg = err instanceof Error ? err.message : 'Unknown error';
       setError(errMsg);

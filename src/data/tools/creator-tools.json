@@ -5,72 +5,149 @@
       "label": "Scriptwriting & Ideation",
       "tools": [
         { "name": "ChatGPT", "free": true, "best_for": "Brainstorming, outlines, first drafts" },
-        { "name": "Claude", "free": true, "best_for": "Long-form scripts, nuanced content" },
-        { "name": "Gemini", "free": true, "best_for": "Research-heavy scripts, fact-checking" }
+        { "name": "Claude", "free": true, "best_for": "Long-form scripts, nuanced content, hooks" },
+        { "name": "Gemini", "free": true, "best_for": "Research-heavy scripts, fact-checking" },
+        { "name": "Perplexity", "free": true, "best_for": "Real-time research with citations for scripts" }
       ]
     },
     "videoEditing": {
       "label": "Video Editing",
       "tools": [
-        { "name": "CapCut", "free": true, "best_for": "Shorts, quick edits, trending effects" },
-        { "name": "DaVinci Resolve", "free": true, "best_for": "Professional editing, color grading" },
-        { "name": "Adobe Premiere Pro", "free": false, "best_for": "Industry standard, team workflows" }
+        { "name": "CapCut", "free": true, "best_for": "Shorts, quick edits, trending effects — best for beginners" },
+        { "name": "DaVinci Resolve", "free": true, "best_for": "Professional editing, color grading, free Studio features" },
+        { "name": "Adobe Premiere Pro", "free": false, "best_for": "Industry standard, team workflows, After Effects integration" },
+        { "name": "Final Cut Pro", "free": false, "best_for": "Mac-native, fast rendering, best for solo creators on Mac" }
       ]
     },
     "thumbnails": {
       "label": "Thumbnail Creation",
       "tools": [
-        { "name": "Canva", "free": true, "best_for": "Quick thumbnails, templates" },
-        { "name": "Photoshop", "free": false, "best_for": "Advanced manipulation" },
-        { "name": "Midjourney", "free": false, "best_for": "AI-generated thumbnail backgrounds" }
+        { "name": "Canva", "free": true, "best_for": "Quick thumbnails, templates, brand kits" },
+        { "name": "Photoshop", "free": false, "best_for": "Advanced manipulation, cutouts, compositing" },
+        { "name": "Midjourney", "free": false, "best_for": "AI-generated thumbnail backgrounds and art" },
+        { "name": "Adobe Firefly", "free": true, "best_for": "AI image generation integrated in Photoshop/Express" }
       ]
     },
     "seo": {
-      "label": "YouTube SEO",
+      "label": "SEO & Keyword Research",
       "tools": [
-        { "name": "VidIQ", "free": true, "best_for": "Keyword research, competitor analysis" },
-        { "name": "TubeBuddy", "free": true, "best_for": "Tag optimization, A/B testing" }
+        { "name": "VidIQ", "free": true, "best_for": "YouTube keyword research, competitor analysis, daily ideas" },
+        { "name": "TubeBuddy", "free": true, "best_for": "Tag optimization, A/B thumbnail testing, rank tracking" },
+        { "name": "Ahrefs", "free": false, "best_for": "Website SEO, backlinks, competitor content gaps" },
+        { "name": "Google Search Console", "free": true, "best_for": "Website performance, indexed pages, search queries" },
+        { "name": "Semrush", "free": false, "best_for": "Full SEO suite, keyword clusters, content audit" }
       ]
     },
     "shortFormAutomation": {
-      "label": "Short-Form Automation",
+      "label": "Short-Form & Repurposing",
       "tools": [
-        { "name": "Opus Clip", "free": true, "best_for": "Auto-clip long videos into Shorts" },
-        { "name": "Vizard", "free": true, "best_for": "AI-powered clip selection" }
+        { "name": "Opus Clip", "free": true, "best_for": "Auto-clip long videos into Shorts with virality scoring" },
+        { "name": "Vizard", "free": true, "best_for": "AI-powered clip selection with captions" },
+        { "name": "Munch", "free": false, "best_for": "Long-form → clips with brand voice preservation" },
+        { "name": "Repurpose.io", "free": false, "best_for": "Auto-distribute repurposed content to multiple platforms" }
       ]
     },
     "audio": {
       "label": "Audio & Voice",
       "tools": [
-        { "name": "Adobe Podcast Enhance", "free": true, "best_for": "Noise removal, voice enhancement" },
-        { "name": "Descript", "free": true, "best_for": "Transcript-based editing" },
-        { "name": "ElevenLabs", "free": true, "best_for": "AI voiceover, multilingual" }
+        { "name": "Adobe Podcast Enhance", "free": true, "best_for": "Noise removal, voice enhancement — instant upload" },
+        { "name": "Descript", "free": true, "best_for": "Transcript-based editing, filler word removal" },
+        { "name": "ElevenLabs", "free": true, "best_for": "AI voiceover, multilingual, voice cloning" },
+        { "name": "Audacity", "free": true, "best_for": "Basic audio editing, podcast production" }
+      ]
+    },
+    "emailMarketing": {
+      "label": "Email Marketing",
+      "tools": [
+        { "name": "Beehiiv", "free": true, "best_for": "Creator newsletters — best free tier, built-in monetization, referral program" },
+        { "name": "Substack", "free": true, "best_for": "Writing-heavy newsletters, paid subscriptions, built-in audience" },
+        { "name": "ConvertKit (Kit)", "free": true, "best_for": "Automation funnels, tag-based segmentation, landing pages" },
+        { "name": "Mailchimp", "free": true, "best_for": "Beginners, 500 contacts free, basic automations" },
+        { "name": "ActiveCampaign", "free": false, "best_for": "Advanced automation, CRM, lead scoring — for course creators" }
+      ]
+    },
+    "scheduling": {
+      "label": "Social Media Scheduling",
+      "tools": [
+        { "name": "Buffer", "free": true, "best_for": "Simple cross-platform scheduling, link-in-bio" },
+        { "name": "Later", "free": true, "best_for": "Instagram-first scheduling with visual calendar" },
+        { "name": "Publer", "free": true, "best_for": "Bulk scheduling, recycling evergreen posts" },
+        { "name": "Metricool", "free": true, "best_for": "Scheduling + multi-platform analytics in one dashboard" },
+        { "name": "Hootsuite", "free": false, "best_for": "Enterprise teams, approval workflows, deep analytics" }
+      ]
+    },
+    "analytics": {
+      "label": "Analytics & Tracking",
+      "tools": [
+        { "name": "Metricool", "free": true, "best_for": "Unified analytics across Instagram, YouTube, TikTok, LinkedIn, X" },
+        { "name": "Sprout Social", "free": false, "best_for": "Team analytics, competitor benchmarking, report exports" },
+        { "name": "Iconosquare", "free": false, "best_for": "Deep Instagram and TikTok analytics, competitor tracking" },
+        { "name": "Google Analytics 4", "free": true, "best_for": "Website traffic, conversion tracking, audience insights" },
+        { "name": "YouTube Studio", "free": true, "best_for": "Native YouTube analytics — most accurate for channel data" }
+      ]
+    },
+    "courseMembership": {
+      "label": "Courses & Memberships",
+      "tools": [
+        { "name": "Kajabi", "free": false, "best_for": "All-in-one courses + email + community — best for 1M+ revenue creators" },
+        { "name": "Teachable", "free": true, "best_for": "Standalone courses, low transaction fees on paid plans" },
+        { "name": "Thinkific", "free": true, "best_for": "Course builder with no transaction fees on free plan" },
+        { "name": "Skool", "free": false, "best_for": "Paid community with gamification — best for cohort-based learning" },
+        { "name": "Gumroad", "free": true, "best_for": "Digital products, PDFs, presets — lowest setup friction" },
+        { "name": "Podia", "free": false, "best_for": "Courses + memberships + email in one tool, no transaction fees" },
+        { "name": "Instamojo", "free": true, "best_for": "India-first payments for digital products, courses, links" }
+      ]
+    },
+    "payments": {
+      "label": "Payments & Monetization",
+      "tools": [
+        { "name": "Razorpay", "free": true, "best_for": "India-first payment gateway, UPI, EMI support for course sales" },
+        { "name": "Stripe", "free": true, "best_for": "Global payments, subscription billing, international creators" },
+        { "name": "Patreon", "free": true, "best_for": "Recurring memberships, patron tiers, fan funding" },
+        { "name": "Buy Me a Coffee", "free": true, "best_for": "One-time tips + memberships, lowest setup friction globally" },
+        { "name": "Stan Store", "free": false, "best_for": "Link-in-bio storefront with built-in checkout for digital products" }
       ]
     },
     "automation": {
       "label": "Workflow Automation",
       "tools": [
-        { "name": "Make (Integromat)", "free": true, "best_for": "Multi-step automations" },
-        { "name": "Zapier", "free": true, "best_for": "Simple app-to-app connections" },
-        { "name": "Notion", "free": true, "best_for": "Content calendar, project management" }
+        { "name": "Make (Integromat)", "free": true, "best_for": "Multi-step automations — more powerful than Zapier, lower cost" },
+        { "name": "Zapier", "free": true, "best_for": "Simple app-to-app connections, 5000+ integrations" },
+        { "name": "n8n", "free": true, "best_for": "Self-hosted automation, complex workflows, no per-task pricing" },
+        { "name": "Notion", "free": true, "best_for": "Content calendar, project management, team wiki" },
+        { "name": "Airtable", "free": true, "best_for": "Content database, brand deal tracker, editorial calendar" }
       ]
     },
     "community": {
       "label": "Community Platforms",
       "tools": [
-        { "name": "Telegram", "best_for": "Best for Indian audiences, high adoption" },
-        { "name": "WhatsApp Communities", "best_for": "Deepest engagement for Indian creators" },
-        { "name": "Discord", "best_for": "Tech-savvy younger audiences, global reach" },
-        { "name": "YouTube Memberships", "best_for": "Highest value — members self-select by paying" }
+        { "name": "Telegram", "free": true, "best_for": "Best for Indian audiences, high adoption, bots, channels" },
+        { "name": "WhatsApp Communities", "free": true, "best_for": "Deepest engagement for Indian creators, 1024 member limit per group" },
+        { "name": "Discord", "free": true, "best_for": "Tech, gaming, Web3 audiences — global, younger demographic" },
+        { "name": "YouTube Memberships", "free": true, "best_for": "Highest value — members self-select by paying; requires 500+ subs" },
+        { "name": "Skool", "free": false, "best_for": "Paid community with gamification — best for course creators" },
+        { "name": "Circle", "free": false, "best_for": "Premium community platform for high-ticket creators" },
+        { "name": "Facebook Groups", "free": true, "best_for": "Older Indian audiences, regional language, local communities" }
+      ]
+    },
+    "indianBrandPlatforms": {
+      "label": "Indian Brand Deal Platforms",
+      "tools": [
+        { "name": "Winkl", "best_for": "Instagram influencer campaigns, Indian brands" },
+        { "name": "Plixxo", "best_for": "Beauty and lifestyle campaigns, POPxo network" },
+        { "name": "InfluGlue", "best_for": "Multi-niche campaigns, managed services" },
+        { "name": "OPA (One Stop Platform)", "best_for": "YouTube-focused Indian campaigns" },
+        { "name": "Qoruz", "best_for": "Data-driven influencer discovery for Indian brands" }
       ]
     },
     "globalBrandPlatforms": {
       "label": "Global Brand Deal Platforms",
       "tools": [
-        { "name": "AspireIQ", "best_for": "Global brand campaigns" },
-        { "name": "Grin", "best_for": "DTC brand partnerships" },
-        { "name": "Captiv8", "best_for": "Enterprise brand deals" },
-        { "name": "Creator.co", "best_for": "Emerging creators, diverse campaigns" }
+        { "name": "AspireIQ", "best_for": "Global brand campaigns, ambassador programs" },
+        { "name": "Grin", "best_for": "DTC brand partnerships, e-commerce integrations" },
+        { "name": "Captiv8", "best_for": "Enterprise brand deals, AI-powered matching" },
+        { "name": "Creator.co", "best_for": "Emerging creators, diverse campaigns" },
+        { "name": "Collabstr", "best_for": "Direct creator-brand marketplace, UGC content" }
       ]
     }
   }

@@ -5,7 +5,9 @@
     "rate": 18,
     "note": "GST registration mandatory when annual turnover exceeds 20 lakh INR",
     "exportOfService": "Zero-rated under IGST for payments from foreign brands",
-    "filingFrequency": "Quarterly for turnover under 5 crore, monthly otherwise"
+    "filingFrequency": "Quarterly for turnover under 5 crore, monthly otherwise",
+    "inputTaxCredit": "Claim ITC on GST paid for equipment, software, and services used in content creation",
+    "reverseCharge": "GST on import of services (e.g., paying foreign SaaS tools) applies under reverse charge mechanism"
   },
   "incomeTax": {
     "slabs2026": [
@@ -16,31 +18,122 @@
       { "from": 1200001, "to": 1500000, "rate": 20 },
       { "from": 1500001, "to": null, "rate": 30 }
     ],
+    "rebate87A": { "limit": 700000, "rebate": 25000, "note": "Full tax rebate if total income does not exceed 7 lakh under new regime" },
+    "surcharge": [
+      { "incomeAbove": 5000000, "rate": 10 },
+      { "incomeAbove": 10000000, "rate": 15 },
+      { "incomeAbove": 20000000, "rate": 25 },
+      { "incomeAbove": 50000000, "rate": 37 }
+    ],
+    "healthEducationCess": 4,
     "advanceTaxDeadlines": [
       { "date": "June 15", "cumulative": 15 },
       { "date": "September 15", "cumulative": 45 },
       { "date": "December 15", "cumulative": 75 },
       { "date": "March 15", "cumulative": 100 }
     ],
+    "advanceTaxThreshold": 10000,
     "section80C": { "limit": 150000, "instruments": ["PPF", "ELSS", "Life Insurance", "NPS Tier 1"] },
-    "section80CCD": { "additionalLimit": 50000, "instrument": "NPS" }
+    "section80CCD": { "additionalLimit": 50000, "instrument": "NPS" },
+    "presumptiveTaxation": {
+      "section44ADA": { "applicableTo": "Professionals with gross receipts under 75 lakh", "rate": "50% of gross receipts deemed as profit", "note": "No need to maintain books of accounts; content creators often qualify as professionals" }
+    }
   },
   "tds": {
-    "brandDeals": { "section": "194R / 194C", "rate": 10, "note": "Indian brands deduct TDS; claim credit when filing ITR" },
-    "adSense": { "note": "No TDS on AdSense income from Google (foreign remittance)" }
+    "brandDeals": {
+      "section": "194R / 194C",
+      "rate": 10,
+      "thresholdPerYear": 20000,
+      "note": "Indian brands deduct TDS; claim credit when filing ITR. 194R applies when total benefit/perquisite exceeds 20,000 per year from one payer."
+    },
+    "adSense": {
+      "note": "No TDS on AdSense income from Google (foreign remittance). Declare under income from other sources or business income."
+    },
+    "affiliateIncome": {
+      "section": "194H",
+      "rate": 5,
+      "threshold": 15000,
+      "note": "TDS deducted by brands paying commission/affiliate income above 15,000 per year"
+    },
+    "courseSales_domesticPlatform": {
+      "section": "194C / 194J",
+      "rate": "2% (194C) or 10% (194J depending on nature)",
+      "note": "If course platform (Indian) deducts TDS on revenue share, it will be under 194C or 194J. Claim credit in ITR."
+    },
+    "courseSales_foreignPlatform": {
+      "note": "Platforms like Udemy, Teachable (foreign) do not deduct Indian TDS. Declare full income and pay advance tax."
+    },
+    "rentals": {
+      "section": "194I",
+      "rate": 10,
+      "threshold": 240000,
+      "note": "TDS on studio/office rent if annual rent exceeds 2.4 lakh"
+    },
+    "professionalServices": {
+      "section": "194J",
+      "rate": 10,
+      "threshold": 30000,
+      "note": "TDS on payments to contractors (editors, designers, voice artists) if payment exceeds 30,000 per year"
+    },
+    "foreignRemittances": {
+      "note": "Income from YouTube AdSense, foreign brand deals, Patreon, etc. is exempt from TDS but must be declared. FEMA compliance required for large inflows."
+    }
+  },
+  "penalties": {
+    "lateITRFiling": { "section": "234F", "amount": 5000, "reducedIfIncomeBelowFiveLakh": 1000, "note": "Penalty for filing ITR after due date (July 31 for non-audit cases)" },
+    "defaultInAdvanceTax": { "section": "234B", "rate": "1% per month on shortfall", "note": "Applies if advance tax paid is less than 90% of assessed tax" },
+    "defermentOfAdvanceTax": { "section": "234C", "rate": "1% per month on shortfall per installment", "note": "Applies if each installment is short of required cumulative percentage" },
+    "nonDeductionOfTDS": { "section": "201", "consequence": "Assessee treated as 'assessee in default'; interest at 1.5% per month + potential prosecution" },
+    "concealmentOfIncome": { "section": "271(1)(c)", "penalty": "100% to 300% of tax on concealed income" },
+    "nonFilingGST": { "lateFee": "Rs 50 per day (Rs 20 for nil returns) subject to maximum of Rs 10,000 per return" }
   },
   "allowableBusinessExpenses": [
-    "Equipment (camera, mic, lighting)",
-    "Internet and mobile bills",
-    "Editing software subscriptions",
+    "Equipment (camera, mic, lighting, tripod, drone)",
+    "Internet and mobile bills (proportionate to business use)",
+    "Editing software subscriptions (Adobe, DaVinci, CapCut Pro)",
     "Studio rent or home office proportion",
-    "Travel for content creation",
-    "Contractor payments (editors, designers)",
-    "Professional development courses"
+    "Travel for content creation (transport, accommodation)",
+    "Contractor payments (editors, thumbnail designers, video managers)",
+    "Professional development courses and subscriptions",
+    "AI tool subscriptions (ChatGPT Plus, Claude Pro, Midjourney)",
+    "Platform fees and transaction charges",
+    "Marketing and paid promotion expenses",
+    "Accounting and legal fees",
+    "Insurance on equipment",
+    "Props, costumes, and production materials",
+    "Depreciation on equipment (ITDA Schedule)",
+    "Domain hosting and website costs",
+    "Email marketing platform subscriptions",
+    "Co-working space memberships used for content work"
   ],
   "businessStructures": [
-    { "type": "Sole Proprietor", "bestFor": "Income under 20 lakh", "pros": "Simple, no compliance overhead", "cons": "Unlimited personal liability" },
-    { "type": "One Person Company", "bestFor": "20 lakh to 50 lakh", "pros": "Limited liability, single owner", "cons": "More compliance than sole prop" },
-    { "type": "Private Limited", "bestFor": "Above 50 lakh", "pros": "Best for investment, hiring, scale", "cons": "Higher compliance, audit requirements" }
+    {
+      "type": "Sole Proprietor",
+      "bestFor": "Income under 20 lakh",
+      "pros": "Simple, no compliance overhead, minimal registration",
+      "cons": "Unlimited personal liability, limited credibility with large brands",
+      "bankAccount": "Current account in own name or trade name"
+    },
+    {
+      "type": "One Person Company (OPC)",
+      "bestFor": "20 lakh to 50 lakh",
+      "pros": "Limited liability, single owner, better brand credibility",
+      "cons": "More compliance than sole prop, MCA annual filings required",
+      "bankAccount": "Current account in company name"
+    },
+    {
+      "type": "Limited Liability Partnership (LLP)",
+      "bestFor": "Two or more co-founders, 20 lakh to 2 crore",
+      "pros": "Limited liability, flexible profit sharing, lower compliance than Pvt Ltd",
+      "cons": "Cannot raise equity investment",
+      "bankAccount": "Current account in LLP name"
+    },
+    {
+      "type": "Private Limited Company",
+      "bestFor": "Above 50 lakh or planning to raise investment/hire",
+      "pros": "Best for investment, ESOP for team, most credible with enterprise brands, GST ITC optimization",
+      "cons": "Higher compliance cost, statutory audit mandatory above 2 crore turnover",
+      "bankAccount": "Current account in company name"
+    }
   ]
 }

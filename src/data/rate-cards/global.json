@@ -18,13 +18,113 @@
         { "range": "10K-50K", "integration": [150, 600], "dedicated": [400, 1500] },
         { "range": "50K-200K", "integration": [600, 2500], "dedicated": [1500, 6000] },
         { "range": "200K-500K", "integration": [2500, 7000], "dedicated": [6000, 18000] },
-        { "range": "500K-1M", "integration": [7000, 18000], "dedicated": [18000, 45000] }
+        { "range": "500K-1M", "integration": [7000, 18000], "dedicated": [18000, 45000] },
+        { "range": "1M+", "integration": [18000, null], "dedicated": [45000, null] }
+      ]
+    },
+    "education": {
+      "label": "Education",
+      "tiers": [
+        { "range": "10K-50K", "integration": [100, 500], "dedicated": [300, 1200] },
+        { "range": "50K-200K", "integration": [500, 2000], "dedicated": [1200, 5000] },
+        { "range": "200K-500K", "integration": [2000, 5500], "dedicated": [5000, 14000] },
+        { "range": "500K-1M", "integration": [5500, 14000], "dedicated": [14000, 35000] },
+        { "range": "1M+", "integration": [14000, null], "dedicated": [35000, null] }
+      ]
+    },
+    "health_wellness": {
+      "label": "Health & Wellness",
+      "tiers": [
+        { "range": "10K-50K", "integration": [120, 500], "dedicated": [350, 1300] },
+        { "range": "50K-200K", "integration": [500, 2200], "dedicated": [1300, 5500] },
+        { "range": "200K-500K", "integration": [2200, 6000], "dedicated": [5500, 15000] },
+        { "range": "500K-1M", "integration": [6000, 15000], "dedicated": [15000, 38000] },
+        { "range": "1M+", "integration": [15000, null], "dedicated": [38000, null] }
+      ]
+    },
+    "beauty_fashion": {
+      "label": "Beauty & Fashion",
+      "tiers": [
+        { "range": "10K-50K", "integration": [100, 450], "dedicated": [300, 1200] },
+        { "range": "50K-200K", "integration": [450, 1800], "dedicated": [1200, 4500] },
+        { "range": "200K-500K", "integration": [1800, 5000], "dedicated": [4500, 12000] },
+        { "range": "500K-1M", "integration": [5000, 12000], "dedicated": [12000, 30000] },
+        { "range": "1M+", "integration": [12000, null], "dedicated": [30000, null] }
+      ]
+    },
+    "food_cooking": {
+      "label": "Food & Cooking",
+      "tiers": [
+        { "range": "10K-50K", "integration": [80, 400], "dedicated": [250, 1000] },
+        { "range": "50K-200K", "integration": [400, 1600], "dedicated": [1000, 4000] },
+        { "range": "200K-500K", "integration": [1600, 4500], "dedicated": [4000, 11000] },
+        { "range": "500K-1M", "integration": [4500, 11000], "dedicated": [11000, 28000] },
+        { "range": "1M+", "integration": [11000, null], "dedicated": [28000, null] }
+      ]
+    },
+    "gaming": {
+      "label": "Gaming",
+      "tiers": [
+        { "range": "10K-50K", "integration": [100, 450], "dedicated": [300, 1100] },
+        { "range": "50K-200K", "integration": [450, 1800], "dedicated": [1100, 4500] },
+        { "range": "200K-500K", "integration": [1800, 5000], "dedicated": [4500, 12000] },
+        { "range": "500K-1M", "integration": [5000, 12000], "dedicated": [12000, 30000] },
+        { "range": "1M+", "integration": [12000, null], "dedicated": [30000, null] }
+      ]
+    },
+    "lifestyle": {
+      "label": "Lifestyle",
+      "tiers": [
+        { "range": "10K-50K", "integration": [80, 350], "dedicated": [220, 900] },
+        { "range": "50K-200K", "integration": [350, 1400], "dedicated": [900, 3500] },
+        { "range": "200K-500K", "integration": [1400, 4000], "dedicated": [3500, 10000] },
+        { "range": "500K-1M", "integration": [4000, 10000], "dedicated": [10000, 25000] },
+        { "range": "1M+", "integration": [10000, null], "dedicated": [25000, null] }
+      ]
+    },
+    "crypto_web3": {
+      "label": "Crypto & Web3",
+      "notes": "Rates are highly variable. Always verify brand's regulatory standing before accepting deals. Many exchanges are geo-restricted.",
+      "tiers": [
+        { "range": "10K-50K", "integration": [200, 900], "dedicated": [600, 2500] },
+        { "range": "50K-200K", "integration": [900, 4000], "dedicated": [2500, 10000] },
+        { "range": "200K-500K", "integration": [4000, 10000], "dedicated": [10000, 25000] },
+        { "range": "500K-1M", "integration": [10000, 25000], "dedicated": [25000, 60000] },
+        { "range": "1M+", "integration": [25000, null], "dedicated": [60000, null] }
+      ]
+    },
+    "travel": {
+      "label": "Travel",
+      "tiers": [
+        { "range": "10K-50K", "integration": [80, 400], "dedicated": [250, 1000] },
+        { "range": "50K-200K", "integration": [400, 1700], "dedicated": [1000, 4200] },
+        { "range": "200K-500K", "integration": [1700, 5000], "dedicated": [4200, 12000] },
+        { "range": "500K-1M", "integration": [5000, 12000], "dedicated": [12000, 30000] },
+        { "range": "1M+", "integration": [12000, null], "dedicated": [30000, null] }
+      ]
+    },
+    "business_motivation": {
+      "label": "Business & Motivation",
+      "tiers": [
+        { "range": "10K-50K", "integration": [150, 600], "dedicated": [400, 1500] },
+        { "range": "50K-200K", "integration": [600, 2500], "dedicated": [1500, 6000] },
+        { "range": "200K-500K", "integration": [2500, 7000], "dedicated": [6000, 17000] },
+        { "range": "500K-1M", "integration": [7000, 17000], "dedicated": [17000, 42000] },
+        { "range": "1M+", "integration": [17000, null], "dedicated": [42000, null] }
       ]
     }
   },
   "cpmByGeography": {
-    "finance": { "india": [1, 3], "us": [15, 40], "uk": [10, 25], "australia": [8, 20] },
-    "technology": { "india": [0.5, 2], "us": [8, 20], "uk": [8, 20], "australia": [5, 15] },
-    "education": { "india": [0.5, 2], "us": [6, 15], "uk": [5, 12], "australia": [6, 15] }
+    "finance": { "india": [1, 3], "us": [15, 40], "uk": [10, 25], "australia": [8, 20], "canada": [8, 18], "germany": [7, 18] },
+    "technology": { "india": [0.5, 2], "us": [8, 20], "uk": [8, 20], "australia": [5, 15], "canada": [5, 14], "germany": [5, 15] },
+    "education": { "india": [0.5, 2], "us": [6, 15], "uk": [5, 12], "australia": [6, 15], "canada": [5, 12], "germany": [4, 10] },
+    "health_wellness": { "india": [0.4, 1.5], "us": [8, 22], "uk": [6, 16], "australia": [7, 18], "canada": [6, 16] },
+    "beauty_fashion": { "india": [0.3, 1.2], "us": [5, 14], "uk": [5, 14], "australia": [4, 12], "canada": [4, 11] },
+    "food_cooking": { "india": [0.3, 1.2], "us": [4, 12], "uk": [4, 11], "australia": [4, 12], "canada": [3, 10] },
+    "gaming": { "india": [0.4, 1.5], "us": [3, 8], "uk": [3, 8], "australia": [3, 7], "canada": [3, 7] },
+    "lifestyle": { "india": [0.3, 1], "us": [3, 9], "uk": [3, 9], "australia": [3, 8], "canada": [3, 8] },
+    "crypto_web3": { "india": [0.5, 2], "us": [8, 25], "uk": [7, 20], "australia": [6, 18], "canada": [6, 18] },
+    "travel": { "india": [0.3, 1.2], "us": [4, 12], "uk": [4, 12], "australia": [5, 14], "canada": [4, 11] },
+    "business_motivation": { "india": [0.5, 2], "us": [6, 16], "uk": [5, 14], "australia": [5, 13], "canada": [5, 13] }
   }
 }
